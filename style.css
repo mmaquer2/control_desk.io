@@ -4,8 +4,8 @@ html {
   font-family: 'lucida console',monospace;
 }
 
-a {  }
-span {padding:10px 10px;}
+
+span {margin: 0 10px;}
 
 #grid {
   display: grid;
@@ -25,21 +25,21 @@ span {padding:10px 10px;}
 
 
 
-  #aside-1 { grid-area: aside1; background-color:white; height:340px;text-align: center;}
+  #aside-1 { grid-area: aside1; background-color:white; height:640px;text-align: center;}
 
-  #aside-2 { grid-area: aside2; background-color:white;height:340px;text-align:center;}
+  #aside-2 { grid-area: aside2; background-color:white;height:640px;text-align:center;}
   
-  #aside-3 { grid-area: aside3; background-color:white;height:340px;text-align:center;}
+  #aside-3 { grid-area: aside3; background-color:white;height:640px;text-align:center;}
   
-  #aside-4 { grid-area: aside4; background-color:white;height:340px;text-align:center;}
+  #aside-4 { grid-area: aside4; background-color:white;height:640px;text-align:center;}
   
-  #aside-5 { grid-area: aside5; background-color:white;height:340px;text-align:center;}
+  #aside-5 { grid-area: aside5; background-color:white;height:640px;text-align:center;}
   
-  #aside-6 { grid-area: aside6; background-color:white;height:340px;text-align:center;}
+  #aside-6 { grid-area: aside6; background-color:white;height:640px;text-align:center;}
 
-  #main1 {grid-area: main1;  background-color:white; height:350px; text-align: center; font-size:18px; }
+  #main1 {grid-area: main1; display: inline-block;  background-color:white; height:350px; text-align: center; font-size:18px; }
 
-  #main2 {grid-area: main2;  background-color:white; height:350px; text-align: center; font-size:18px; }
+  #main2 {grid-area: main2;  background-color:white; height:450px; text-align: center; font-size:18px; }
 
 
 
@@ -132,10 +132,31 @@ header {
 
   }
 
-  .google-ai {
+  #wolf {
 
-    height:300px;
-    width:500px;
+    height:200px;
+    width:400px;
+    
+    display:inline-block;
+    box-shadow: 5px 5px 5px 5px grey;
+    padding: 50px 50px;
+    background-color:white;
+    margin-right:20px;
+    position: absolute;
+    left:50px;
+    display: inline-block;
+    margin-top:10px;
+    
+  }
+
+  #weather {
+
+    height:200px;
+    width:270px;
+    margin-top:10px;
+    left:70%;
+    position: absolute;
+    
     display:inline-block;
     box-shadow: 5px 5px 5px 5px grey;
     padding: 50px 50px;
@@ -198,14 +219,21 @@ header {
     background-color:#383838;
     width: 100%;
     z-index: 1;
-    word-spacing: 20px;
+    
   }
   
   /* Style the subnav links */
   .subnav-content a {
-    float: left;
+    float:left;
     color: white;
     text-decoration: none;
+    display: inline-block;
+    padding:5px;
+    margin: 10px;
+
+  }
+  .subnav-content span {
+    margin: 0 10px;
   }
   
   /* Add a grey background color on hover */

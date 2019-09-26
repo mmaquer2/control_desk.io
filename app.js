@@ -22,6 +22,13 @@
 
     }
 
+    //open reddit on click
+
+    function reddit(){
+
+        
+    }
+
 
     const news_key = ('a0797ceb9fc0435c9e7e691760ad4244')
     const news_url = ('https://newsapi.org/v2/top-headlines?country=us&apiKey=a0797ceb9fc0435c9e7e691760ad4244')
@@ -66,3 +73,11 @@
     }
 
     */
+
+    //refreshs page with FA icon
+
+    function refresh(){
+        window.reload(true);
+
+
+    }
