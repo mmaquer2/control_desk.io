@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Control_desk.io</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel ="stylesheet" type ="text/css" href ="style.css">
+    <script src = "app.js"></script>
+    <script src="https://kit.fontawesome.com/8965181dc2.js"></script>
+</head>
+
+<body>
+    <header>
+       <center> <h2>control_desk.io</h2></center>
+        <i style ="margin-left: 30px;"class="fa fa-refresh" aria-hidden="true"></i>
+        <br>
+        
+    </header>
+    <br>
+    <div class="navbar">
+            
+            <div class="subnav">
+              <button class="subnavbtn">#1 <i class="fa fa-caret-down"></i></button>
+              <div class="subnav-content">
+                <a href="#bring">1</a>
+                <a href="#deliver">Deliver</a>
+                
+              </div>
+            </div>
+            <div class="subnav">
+              <button class="subnavbtn"> #2 <i class="fa fa-caret-down"></i></button>
+              <div class="subnav-content">
+                <a href="#link1">Link 1</a>
+                
+              </div>
+            </div>
+            
+          </div>
+    <br>
+  <div class="tcontainer">
+    <div class="ticker-wrap">
+      <div class="ticker-move">
+        <div class="ticker-item"> MSFT +1.30 (139.31)</div>
+        <div class="ticker-item">INTC +.50 (54.20)</div>
+        <div class="ticker-item">USA Women Win Soccer World Cup</div>
+        <div class="ticker-item"> Washington Capitals Win Stanely Cup</div>
+        <div class="ticker-item" id="output">  </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <br>
+  <div class = "main-1">
+
+
+
+  </div>
+
+  <div class = "main-2">
+
+
+
+</div>
+
+<div class = "main-3">
+
+
+
+</div>
+  <br>
+  <div class = "google-ai">
+    <p>Search Powered by wolfram alpha</p>
+    <input id="wolf_search" style ="width: 250px";"type="text"></input>
+    <br>
+    <br>
+
+    <button  class="btn btn-primary" onclick ="test()"> Search </button>
+    <p id = "search-out">  </p>
+
+    </div>
+    <div class = "news-box">
+            <p>Major News Headlines</p>
+            
+            <br>
+        
+            <p id = "search-out">  </p>
+        
+            </div>
+  <div class = "source-menu">
+        <div class = "category">
+            <p></p>
+
+
+        <button class="accordion">Sports</button>
+<div class="panel">
+        <button class="accordion"> Baseball</button>
+        <div class="panel">
+        <p>Team Name Here </p>
+        </div>
+        <button class="accordion"> Basketball</button>
+        <div class="panel">
+        <p>Team Name Here  </p>
+        </div>
+        <button class="accordion"> Hockey</button>
+        <div class="panel">
+        <p> Team Name  Here   </p>
+        </div>
+        <button class="accordion"> American Football</button>
+        <div class="panel">
+        <p> Team Name  Here   </p>
+        </div>
+
+</div>
+
+<button class="accordion">Finance</button>
+<div class="panel">
+        <button class="accordion"> Stocks</button>
+        <div class="panel">
+                <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-sm">Enter Stock Ticker to Follow:</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                      </div>
+                      <br>
+                      <p id ="stock_output"></p>
+                      <br>
+                      <p> Add: </p><input type="checkbox" id="myCheck" onclick="test()">
+        </div>
+        <button class="accordion"> Currency</button>
+        <div class="panel">
+        <p>Dollar </p>
+        </div>
+        <button class="accordion"> Bonds</button>
+        <div class="panel">
+        <p>US Ten Year Yield:  </p>
+        </div>
+  
+</div>
+
+<button class="accordion">Publications</button>
+<div class="panel">
+        <button class="accordion"> World</button>
+        <div class="panel">
+                <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Enter News Publication to Follow:</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <p> Add: </p><input type="checkbox" id="myCheck" onclick="test()">
+              <p> Add: </p><input type="checkbox" id="myCheck" onclick="test()">
+        </div>
+        <button class="accordion"> National</button>
+        <div class="panel">
+        <p> Washington Post </p>
+        <p> Add: </p><input type="checkbox" id="myCheck" onclick="test()">
+        <p>New York Times</p>
+        <p> Add: </p><input type="checkbox" id="myCheck" onclick="test()">   
+        <br>
+        <p></p>
+        </div>
+        <button class="accordion"> State/Local</button>
+        <div class="panel">
+        <p>Search for your state  </p>
+        </div>
+        </div>
+    <button class="accordion">Settings</button>
+        <div class="panel">
+                <button class="accordion"> Ticker Speed</button>
+                <div class="panel">
+                <p>option </p>
+                </div>
+                <button class="accordion"> Text Size</button>
+                <div class="panel">
+                <p> Font Size: Large, Medium , Small  </p>
+                <br>
+                <p></p>
+                </div>
+                <button class="accordion"> Another Setting </button>
+                <div class="panel">
+                <p> Option here </p>
+                <button class="accordion"> Reset</button>
+                <div class="panel">
+                <p> Reset</p>
+                <br>
+                <p></p>
+                </div>
+        </div>
+</div>
+<br></br>
+    <div class = "search">
+        <button  class="btn btn-primary" onclick ="test_news_api()"> Update Ticker </button>
+
+
+    </div>
+
+
+
+
+
+  </div>
+  <br>
+  
+  </div>
+  <footer>
+
+    <a href="">Created by Mike Maquera, 2019 </a>
+  </footer>
+</body>
+</html>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+    
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+</script>

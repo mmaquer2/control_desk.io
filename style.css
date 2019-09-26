@@ -1,0 +1,168 @@
+header {
+
+    background-color:#383838; height: 70px;
+    font-family: 'lucida console',monospace;
+    color:white;
+}
+
+
+
+
+@keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+  }
+  .tcontainer{
+    width: 100%;
+    overflow: hidden;
+  }
+  .ticker-wrap {
+    width: 100%;
+    padding-left: 100%;
+    background-color: black;
+    color: green;
+    height: 80px;
+    font-size:30px;
+    border: 10px grey;
+  }
+  .ticker-move {
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 100%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: ticker;
+    animation-duration: 60s;
+  }
+  .ticker-move:hover{
+    animation-play-state: paused;
+  }
+  .ticker-item{
+    display: inline-block;
+    padding: 0 2rem;
+  }
+
+  .source-menu {
+
+    text-align: center;
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+
+ .main-1,.main-2,.main-3 {
+    height:300px;
+    width:450px;
+    display:inline-block;
+    box-shadow: 5px 5px 5px 5px grey;
+    padding: 50px 50px;
+    background-color:white;
+    
+    
+ }
+
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc; 
+  }
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+
+  }
+
+  .google-ai {
+
+    height:300px;
+    width:500px;
+    display:inline-block;
+    box-shadow: 5px 5px 5px 5px grey;
+    padding: 50px 50px;
+    background-color:white;
+    margin-right:20px;
+
+    
+  }
+
+  .news-box {
+
+    height:300px;
+    width:500px;
+    display:inline-block;
+    box-shadow: 5px 5px 5px 5px grey;
+    padding: 50px 50px;
+    background-color:white;
+    margin-right:20px;
+
+  }
+
+  footer {
+    background-color:#383838; height: 70px;text-align: center;
+  }
+
+
+  .subnav {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Subnav button */
+  .subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  /* Add a red background color to navigation links on hover */
+  .navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: skyblue;
+  }
+  
+  /* Style the subnav content - positioned absolute */
+  .subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: red;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  /* Style the subnav links */
+  .subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Add a grey background color on hover */
+  .subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+  }
+  
+  /* When you move the mouse over the subnav container, open the subnav content */
+  .subnav:hover .subnav-content {
+    display: block;
+  }
