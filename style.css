@@ -149,10 +149,26 @@ header {
     
   }
 
+  #calc {
+
+    height:300px;
+    width:400px;
+    
+    display:inline-block;
+    box-shadow: 5px 5px 5px 5px grey;
+    padding: 50px 50px;
+    background-color:white;
+    margin-right:20px;
+    position: absolute;
+    left:40%;
+    display: inline-block;
+    margin-top:10px;
+    
+  }
   #weather {
 
     height:300px;
-    width:270px;
+    width:400px;
     margin-top:10px;
     left:70%;
     position: absolute;
@@ -192,6 +208,11 @@ header {
     overflow: hidden;
     height:50px;
     background-color:#383838;
+    color:white;
+  }
+
+  .subnav p {
+    color:white;
   }
   
   /* Subnav button */

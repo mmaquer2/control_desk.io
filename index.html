@@ -17,7 +17,7 @@
     </header>
     
     <div class="navbar">
-            <button id ="run" onclick = "stock_api()">Run</button>
+      <button  class="btn btn-primary" onclick ="stock_news()"> Run </button>
             <div class="subnav">
               <button class="subnavbtn"> Podcasts - Music <i class="fa fa-caret-down"></i></button>
               <div class="subnav-content">
@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class ="subnav">
-              <i class="fa fa-refresh" aria-hidden="true" fa-4x><button onclick ="refresh()"></button></i>
+              <p id = "date_time">   </p>
 
             </div>
             
@@ -47,9 +47,9 @@
   <div class="tcontainer">
     <div class="ticker-wrap">
       <div class="ticker-move">
-        <div class="ticker-item"> MSFT +1.30 (139.31)</div>
-        <div class="ticker-item">INTC +.50 (54.20)</div>
-        <div class="ticker-item">USA Women Win Soccer World Cup</div>
+        <div class="ticker-item"> SPY <p id="spy"> 290</p></div>
+        <div class="ticker-item">DIA <p id="DIA"></p></div>
+        <div class="ticker-item">NSDQ <p id="NDSQ"></p></div>
         <div class="ticker-item"> Washington Capitals Win Stanely Cup</div>
         <div class="ticker-item" id="output">  </div>
         
@@ -61,20 +61,22 @@
   <div id = "grid">
     <div id = "aside-1">
     <h4>Business and Finance</h4>
-        <p>Market Trends:</p>
         <br>
         <p> Watch List:</p>
+        <p id="stock_output"></p>
   </div>
 
   <div id = "aside-2">
     <h4>Sports </h4>
-
+    <p id="sport_upcoming_output"></p>
 
 </div>
 
 <div id = "aside-3">
 
   <h4>Top News Headlines</h4>
+
+  <p id="news_output"></p>
 
 </div>
 
@@ -88,6 +90,7 @@
 <div id = "aside-5">
 
 <h4>Latest Sport Results</h4>
+<p id="sports_results_output"></p>
 
 </div>
 
@@ -102,6 +105,16 @@
     <p>Search Powered by wolfram alpha</p>
     <input type ="text" id="wolf_search" style ="width: 250px";></input>
     
+      <br>
+    <button  class="btn btn-primary" onclick ="wolf()"> Search </button>
+
+    <p id = "search-out">  </p>
+  </div>
+
+  <div id="calc">
+    <p></p>
+    <input type ="text" id="wolf_search" style ="width: 250px";></input>
+<br>
 
     <button  class="btn btn-primary" onclick ="stock_api()"> Search </button>
     <p id = "search-out">  </p>

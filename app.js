@@ -1,9 +1,11 @@
 
+//on load update function 
 window.onload = function(){
-    this.test();
-    this.weather();
-    this.stock_api();
-    this.test_news_api();
+  this.time();
+// this.test();
+   // this.weather();
+ //   this.stock_api();
+ //   this.test_news_api();
 
 }
 
@@ -13,6 +15,24 @@ window.onload = function(){
         alert('test is working')
         
         document.getElementById('search-out').innerHTML = "test test test"
+    }
+
+    function time() {
+        var d = new Date();
+    document.getElementById("date_time").innerHTML = d;
+
+
+    }
+
+    const stock_news_url = ('https://api-v2.intrinio.com/companies/news?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+
+    async function stock_news() {
+        const response = await fetch(stock_news_url);
+        const news_data = await response.json();
+
+        console.log(news_data)
+
+
     }
 
     //const watchlist = []
@@ -39,22 +59,27 @@ window.onload = function(){
 
     const news_key = ('a0797ceb9fc0435c9e7e691760ad4244')
     const news_url = ('https://newsapi.org/v2/top-headlines?country=us&apiKey=a0797ceb9fc0435c9e7e691760ad4244')
-    async function test_news_api() {
+    async function news_api() {
 
         const response = await fetch(news_url);
         const news_data = await response.json();
-        
-           // console.log (news_data.articles[0].title,news_data.articles[0].description,news_data.articles[0].publishedAt,news_data.articles[0].source.name)
+
+        var string = ""
         var i = 0;
         var titles = ""
         var desc = ""
-        for(i; i<news_data.articles.length;i++){
+        
+       string = news_data.articles[1].title + news_data.articles[1].description + news_data.articles[1].publishedAt + news_data.articles[1].source.name
+        
+        /*for(i; i<news_data.articles.length;i++){
                 titles = news_data.articles[i].title;
                 desc = news_data.articles[i].description;
                 console.log(titles,desc)
             
-            }
-                
+         }
+         */
+            document.getElementById('news_output').innerHTML =string   
+                //string ='<div class="card"> <div><span class=""> City: '+data.name+'</span></div><div class=""></div><div class="col-xs-5"> Currently is: '+f_temp+' F </div><div>'+data.main.humidity+' % Humidity </div> <div> '+data.weather[0].description+'</div> </div><br></br>';
 
         }
 
@@ -108,24 +133,32 @@ window.onload = function(){
          }
 
 
+         //wolfram_alpha api connection
+        
+         //24KJW8-K57P224TRW
+        // const wolf_key = ('24KJW8-K57P224TRW')
+          //  const wolf_url = ('')
+         function wolf() {
+
+            var query = ''
+           query = document.getElementById('wolf_search').innerHTML;
     
+           // const response = await fetch(wolf_url);
+           // const calc_data = await response.json();
+    
+          //  console.log(calc_data);
+           
+           
+            alert(query)
+    
+    
+        }
 
 
-
-    //wolfram_alpha api connection
-    //24KJW8-K57P224TRW
+    
 /*
-    async function wolf() {
-        const wolf_key = ('24KJW8-K57P224TRW')
-        const wolf_url = ('')
-
-        const response = await fetch(wolf_url);
-        const calc_data = await response.json();
-
-        console.log(calc_data);
-        alert('hello world')
-
-    }
+    
+    
 
 
     //sports api 
@@ -148,10 +181,3 @@ window.onload = function(){
 
    
 
-    //refreshs page with FA icon
-
-    function refresh(){
-        window.reload(true);
-
-
-    }
