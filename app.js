@@ -27,12 +27,15 @@ window.onload = function(){
     const stock_news_url = ('https://api-v2.intrinio.com/companies/news?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
 
     async function stock_news() {
+        var string = ""
         const response = await fetch(stock_news_url);
         const news_data = await response.json();
 
         console.log(news_data)
 
+        
 
+        document.getElementById('stock_news_output').innerHTML =string 
     }
 
     //const watchlist = []
