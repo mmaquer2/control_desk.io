@@ -4,8 +4,8 @@ window.onload = function(){
   this.time();
 // this.test();
    // this.weather();
- //   this.stock_api();
- //   this.test_news_api();
+  // this.stock_api();
+   //this.news_api();
 
 }
 
@@ -119,17 +119,17 @@ window.onload = function(){
         function VisualWeather_test (temp,des) {
         
             if (temp < 300) {
-            document.getElementById('weather-icon').className = "fas fa-cloud fa-10x"
+           // document.getElementById('weather-icon').className = "fas fa-cloud fa-10x";
             document.getElementById('weather').style.backgroundColor = "lightgrey";
             
             }
             else if ( temp > 300) {
-                document.getElementById('weather').style.backgroundColor = "skyblue";
-                document.getElementById('weather-icon').className = "fas fa-sun fa-10x"
+               document.getElementById('weather').style.backgroundColor = "skyblue";
+              //  document.getElementById('weather-icon').className = "fas fa-sun fa-10x";
             }
             
             else {
-                document.getElementById('weather-icon').className = "fas fa-cloud fa-10x"
+               // document.getElementById('weather-icon').className = "fas fa-cloud fa-10x"
                 document.getElementById('weather').style.backgroundColor = "grey";
             }
             
