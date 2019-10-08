@@ -10,9 +10,10 @@ span {margin: 0 10px;}
 #grid {
   display: grid;
   grid-template-columns: 3fr 1fr 1fr;
-  grid-template-rows: 500px 1fr 1fr 1fr 50px;
+  grid-template-rows: 500px 1fr 1fr 1fr 500px;
   grid-gap:8px;
   background-color: #383838;
+  box-shadow: 5px 5px 5px 5px grey;
   grid-template: 
                   
                  
@@ -27,7 +28,7 @@ span {margin: 0 10px;}
 
   #aside-1 { grid-area: aside1; background-color:white; height:640px;text-align: center;}
 
-  #aside-2 { grid-area: aside2; background-color:white;height:640px;text-align:center;}
+  #aside-2 {grid-area: aside2; background-color:white;height:640px;text-align:center;}
   
   #aside-3 { grid-area: aside3; background-color:white;height:640px;text-align:center;}
   
@@ -45,7 +46,7 @@ span {margin: 0 10px;}
 
 header {
 
-    background-color:#383838; height: 25px;
+    background-color:#383838; height: 5px;
     font-family: 'lucida console',monospace;
     color:white;
 }
@@ -66,7 +67,7 @@ header {
     padding-left: 100%;
     background-color: black;
     color: green;
-    height: 80px;
+    height: 100px;
     font-size:30px;
     border: 10px grey;
   }
@@ -83,8 +84,9 @@ header {
     animation-play-state: paused;
   }
   .ticker-item{
+    margin-top:10px;
     display: inline-block;
-    width:100px;
+    margin-right:5px;
   }
 
 
@@ -108,37 +110,8 @@ header {
   padding: 50px 50px;
   background-color:white;
  }
-
-  .accordion {
-    background-color: #eee;
-    color: #444;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-  }
   
-  .active, .accordion:hover {
-    background-color: #ccc; 
-  }
-  
-  .panel {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-    overflow: hidden;
-
-  }
-
-  
-
-  
-  #weather {
+  .card {
 
     height:300px;
     width:400px;
@@ -153,6 +126,7 @@ header {
 
     
   }
+  
 
   .news-box {
 
@@ -172,6 +146,7 @@ header {
 
   .navbar {
     background-color: #383838;
+    height:70px;
   }
 
 

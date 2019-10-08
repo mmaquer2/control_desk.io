@@ -10,20 +10,29 @@ window.onload = function(){
 
 }
 
-
-    function test() {
+function test() {
         console.log('hello world')
         alert('test is working')
-        
         document.getElementById('search-out').innerHTML = "test test test"
     }
+function time() {
 
-    function time() {
-        var d = new Date();
-    document.getElementById("date_time").innerHTML = d;
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
 
+var yyyy = today.getFullYear();
+if (dd < 10) {
+  dd = '0' + dd;
+} 
+if (mm < 10) {
+  mm = '0' + mm;
+} 
+var today = dd + '/' + mm + '/' + yyyy;
+        
+    document.getElementById("date_time").innerHTML = today;
 
-    }
+ }
 
     const stock_news_url = ('https://api-v2.intrinio.com/companies/news?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
 
@@ -84,8 +93,7 @@ window.onload = function(){
          */
             document.getElementById('news_output').innerHTML =string   
                 //string ='<div class="card"> <div><span class=""> City: '+data.name+'</span></div><div class=""></div><div class="col-xs-5"> Currently is: '+f_temp+' F </div><div>'+data.main.humidity+' % Humidity </div> <div> '+data.weather[0].description+'</div> </div><br></br>';
-
-        }
+ }
 
         async function weather() {
 
@@ -102,7 +110,7 @@ window.onload = function(){
             //convert kelvin to degrees F
             f_temp = ((k_temp - 273.15) * 1.8 + 32).toFixed(1);
             
-            string ='<div class="card"> <div><span class=""> City: '+data.name+'</span></div><div class=""></div><div class="col-xs-5"> Currently is: '+f_temp+' F </div><div>'+data.main.humidity+' % Humidity </div> <div> '+data.weather[0].description+'</div> </div><br></br>';
+            string ='<div> '+data.name+' <br> Currently is: '+f_temp+' F </<div><div>'+data.main.humidity+' % Humidity </div> <div> '+data.weather[0].description+'</div>';
             console.log(data.weather[0].main)
             //console.log(data.main.temp)
             //  console.log(data.main.humidity)
@@ -113,9 +121,16 @@ window.onload = function(){
         
          document.getElementById('today_weather').innerHTML =string
          document.getElementById('Weather_ticker').innerHTML = f_temp;  
-         VisualWeather_test(k_temp,desc) 
+         //VisualWeather_test(k_temp,desc) 
     
         }
+
+        //five day weather forecast:
+        // api.openweathermap.org/data/2.5/forecast?q=nashville&APPID=a488d31fefafdc561500bdfd1b695f5d
+
+       
+
+        //document.getElementById('five_day_weather').innerHTML = f_temp;
     
     
         function VisualWeather_test (temp) {
