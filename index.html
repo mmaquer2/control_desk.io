@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width= initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="refresh" content="120"/>
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel ="stylesheet" type ="text/css" href ="style.css">
@@ -21,8 +22,8 @@
             <div class="subnav">
               <button class="subnavbtn"> Podcasts - Music <i class="fa fa-caret-down"></i></button>
               <div class="subnav-content">
-                <a href="#bring">Motely Fool Podcasts</a><span></span>
-                <a href="#deliver"> Racing/F1 </a>
+                <a href="#bring">Motely Fool </a><span></span>
+                <a href="#deliver"> Citius Mag </a>
 
                 
               </div>
@@ -47,11 +48,13 @@
   <div class="tcontainer">
     <div class="ticker-wrap">
       <div class="ticker-move">
+        <div class="ticker-item"> <p>Current Weather: <div id = "Weather_ticker"></div></p> </div>
+        
         <div class="ticker-item"><p> SPY</p> <p id="spy">  </p></div>
         <div class="ticker-item"><p> DIA</p>  <p id="DIA"> </p></div>
         <div class="ticker-item"> <p id="NDSQ"></p></div>
         <div class="ticker-item"> <p>Traffic Report:  </p></div>
-        <div class="ticker-item"> <p>Current Weather:  </p></div>
+        
         <div class="ticker-item" id="output">  </div>
         
       </div>
@@ -61,21 +64,21 @@
   <br>
   <div id = "grid">
     <div id = "aside-1">
-    <h4>Watch List</h4>
+    <h3>Watch List</h3>
         <br>
         
         <p id="stock_output"></p>
   </div>
 
   <div id = "aside-2">
-    <h4>Sports </h4>
+    <h3>Sports </h3>
     <p id="sport_upcoming_output"></p>
 
 </div>
 
 <div id = "aside-3">
 
-  <h4>Top News Headlines</h4>
+  <h3>Top News Headlines</h3>
 
   <p id="news_output"></p>
 
@@ -83,161 +86,49 @@
 
 <div id = "aside-4">
 
-  <h4>Business News </h4>
+  <h3>Business News </h3>
   
-  <p id ="stock_news_output"></p>
+  <p id ="stock_news"></p>
 
 
 </div>
 
 <div id = "aside-5">
 
-<h4>Sport Results</h4>
+<h3>Sport Results</h3>
 <p id="sports_results_output"></p>
 
 </div>
 
 <div id = "aside-6">
 
-<h4>Reddit Feed</h4>
+<h3>Menu 6</h3>
 
 </div>
   
   <div id = "main1">
+    <h2> Current Weather Forecast: </h2>
+      <p class ="" id ="today_weather"></p>
     
-
-    <div class = "" id = "weather">
-      <p> Weather:</p>
-      <p class ="" id ="weather_output"></p>
-    </div>
+    <br>
+    <h3> 7 Day Weather Forecast: </h3>
+    <p id ="five_day_weather"></p>
   
-
+  </div>
   </div>
 
   <div id="main2">
-    <p>OTHER STUFF ?</p>
+    
         
-            <p id = "search-out">  </p>
+  
         
-            </div>
+            
 
   </div>
     
 </div> 
   
   
-  
-            <div class = "source-menu">
-        <div class = "category">
-            <p> Misc information: </p>
-
-      <button class="accordion">Sports</button>
-<div class="panel">
-        <button class="accordion"> Baseball</button>
-        <div class="panel">
-        <p>Team Name Here </p>
-        </div>
-        <button class="accordion"> Basketball</button>
-        <div class="panel">
-        <p>Team Name Here  </p>
-        </div>
-        <button class="accordion"> Hockey</button>
-        <div class="panel">
-        <p> Team Name  Here   </p>
-        </div>
-        <button class="accordion"> American Football</button>
-        <div class="panel">
-        <p> Team Name  Here   </p>
-        </div>
-
-</div>
-
-<button class="accordion">Finance</button>
-<div class="panel">
-        <button class="accordion"> Stocks</button>
-        <div class="panel">
-                <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="inputGroup-sizing-sm">Enter Stock Ticker to Follow:</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                      </div>
-                      <br>
-                      <p id ="stock_output"></p>
-                      <br>
-                      <p> Add: </p><input type="checkbox" id="myCheck" onclick="test()">
-        </div>
-        <button class="accordion"> Currency</button>
-        <div class="panel">
-        <p>Dollar </p>
-        </div>
-        <button class="accordion"> Bonds</button>
-        <div class="panel">
-        <p>US Ten Year Yield:  </p>
-        </div>
-  
-</div>
-
-<button class="accordion">Publications</button>
-<div class="panel">
-        <button class="accordion"> World</button>
-        <div class="panel">
-                <div class="input-group input-group-sm mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-sm">Enter News Publication to Follow:</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-              </div>
-              <p> Add: </p><input type="checkbox" id="myCheck" onclick="test()">
-              <p> Add: </p><input type="checkbox" id="myCheck" onclick="test()">
-        </div>
-        <button class="accordion"> National</button>
-        <div class="panel">
-        <p> Washington Post </p>
-        <p> Add: </p><input type="checkbox" id="myCheck" onclick="test()">
-        <p>New York Times</p>
-        <p> Add: </p><input type="checkbox" id="myCheck" onclick="test()">   
-        <br>
-        <p></p>
-        </div>
-        <button class="accordion"> State/Local</button>
-        <div class="panel">
-        <p>Search for your state  </p>
-        </div>
-        </div>
-    <button class="accordion">Settings</button>
-        <div class="panel">
-                <button class="accordion"> Ticker Speed</button>
-                <div class="panel">
-                <p>option </p>
-                </div>
-                <button class="accordion"> Text Size</button>
-                <div class="panel">
-                <p> Font Size: Large, Medium , Small  </p>
-                <br>
-                <p></p>
-                </div>
-                <button class="accordion"> Another Setting </button>
-                <div class="panel">
-                <p> Option here </p>
-                <button class="accordion"> Reset</button>
-                <div class="panel">
-                <p> Reset</p>
-                <br>
-                <p></p>
-                </div>
-        </div>
-</div>
-<br></br>
-    <div class = "search">
-        <button  class="btn btn-primary" onclick ="test_news_api()"> Update Ticker </button>
-
-
-    </div>
-
-
-
-
 
   </div>
   <br>
@@ -250,18 +141,3 @@
 </body>
 </html>
 
-<script>
-  var acc = document.getElementsByClassName("accordion");
-    
-    for (var i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
-        }
-      });
-    }
-</script>

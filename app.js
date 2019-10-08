@@ -3,9 +3,10 @@
 window.onload = function(){
   this.time();
 // this.test();
-   // this.weather();
+ this.weather();
   // this.stock_api();
-   //this.news_api();
+   this.news_api();
+   this.stock_news();
 
 }
 
@@ -27,15 +28,15 @@ window.onload = function(){
     const stock_news_url = ('https://api-v2.intrinio.com/companies/news?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
 
     async function stock_news() {
-        var string = ""
+        
         const response = await fetch(stock_news_url);
         const news_data = await response.json();
 
-        console.log(news_data)
+        var output = news_data;
+        console.log(output)
 
-        
-
-        document.getElementById('stock_news_output').innerHTML =string 
+        //output to front end 
+       // document.getElementById('stock_news').innerHTML = output 
     }
 
     //const watchlist = []
@@ -110,13 +111,14 @@ window.onload = function(){
              console.log(data.weather[0].icon)
             // console.log(data.name)
         
-         document.getElementById('weather_output').innerHTML =string  
+         document.getElementById('today_weather').innerHTML =string
+         document.getElementById('Weather_ticker').innerHTML = f_temp;  
          VisualWeather_test(k_temp,desc) 
     
         }
     
     
-        function VisualWeather_test (temp,des) {
+        function VisualWeather_test (temp) {
         
             if (temp < 300) {
            // document.getElementById('weather-icon').className = "fas fa-cloud fa-10x";

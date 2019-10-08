@@ -84,18 +84,12 @@ header {
   }
   .ticker-item{
     display: inline-block;
-    padding: 0 2rem;
+    width:100px;
   }
 
-  .source-menu {
 
-    text-align: center;
-    display: inline;
-    
 
-  }
-
- .main-1,.main-2,.main-3 {
+ .main-1 {
     height:300px;
     width:450px;
     display:inline-block;
@@ -104,6 +98,15 @@ header {
     background-color:white;
     
     
+ }
+
+ .main-2 {
+  height:200px;
+  width:450px;
+  display:inline-block;
+  box-shadow: 5px 5px 5px 5px grey;
+  padding: 50px 50px;
+  background-color:white;
  }
 
   .accordion {
