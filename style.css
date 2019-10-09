@@ -10,9 +10,9 @@ span {margin: 0 10px;}
 
 #grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 500px 1fr 1fr 1fr 500px;
-  grid-gap:8px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 500px 1fr 1fr 1fr 1fr 500px;
+  grid-gap:12px;
   background-color: #383838;
   box-shadow: 5px 5px 5px 5px grey;
   grid-template: 
@@ -22,7 +22,8 @@ span {margin: 0 10px;}
                  "aside2 aside2 aside2"
                  "aside1 aside1 aside1"       
                  "main1 main1 main1"
-                 "main2 main2 main2";
+                 "main2 main2 main2"
+                 "main3 main3 main3";
   }
 
 
@@ -39,14 +40,9 @@ span {margin: 0 10px;}
 
   #main2 {grid-area: main2;  background-color:white; height:350px; text-align: center; font-size:18px; }
 
+  #main3 {grid-area: main3;  background-color:white; height:350px; text-align: center; font-size:18px; }
 
 
-header {
-
-    background-color:#383838; height: 5px;
-    font-family: 'lucida console',monospace;
-    color:white;
-}
 
 #title {
 
@@ -54,10 +50,7 @@ header {
   font-family: 'lucida console',monospace;
   font-weight: bold;
 
-
 }
-
-
 
 
 

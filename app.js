@@ -8,6 +8,7 @@ window.onload = function(){
    this.news_api();
    this.stock_news();
    this.five_day();
+   this.stock_test();
 
 }
 
@@ -35,21 +36,31 @@ var today = dd + '/' + mm + '/' + yyyy;
 
  }
 
-    const stock_news_url = ('https://api-v2.intrinio.com/companies/news?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+    
 
     async function stock_news() {
-        
+        const stock_news_url = ('https://api-v2.intrinio.com/companies/news?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')    
         const response = await fetch(stock_news_url);
         const news_data = await response.json();
 
          
-        console.log(news_data)
+        //console.log(news_data)
 
-        var output = news_data.news[1].title +'<br>'+ news_data.news[1].summary +'<br>'+ news_data.news[1].publication_date +'<br>'+ news_data.news[1].url
-
-
+        //var output = news_data.news[1].title +'<br>'+ news_data.news[1].summary +'<br>'+ news_data.news[1].publication_date +'<br>'+ news_data.news[1].url
+        console.log(news_data.news[3].title)
+        
+        for (var i = 0; i < news_data; i++) {
+            var test_output = "";
+            //for (j in news_data.news) {
+            //test_output += '<div class = "card>">'+news_data.news.summary +'</div>'
+         test_output = (news.title[i])
+            
+        };
+        console.log(test_output)
+        
+    
         //output to front end 
-        document.getElementById('stock_news').innerHTML = output 
+        //document.getElementById('stock_news').innerHTML = test_output 
     }
 
     //const watchlist = []
@@ -68,7 +79,21 @@ var today = dd + '/' + mm + '/' + yyyy;
             console.log(price)
         }
 */
-      alert('hello world')
+      
+
+    }
+
+    //stock api with intrino stuff
+   // https://api-v2.intrinio.com/companies/AAPL?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5
+    //https://api-v2.intrinio.com/securities/AAPL/prices/realtime
+    async function stock_test(){
+        const stock_url = ('https://api-v2.intrinio.com/securities/AAPL/prices/realtime?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+        const data = await fetch(stock_url);
+        const stock_data = await data.json();
+        console.log(stock_data)
+
+        var stocks = "hello world"
+        document.getElementById('watchlist').innerHTML = stocks;
 
     }
 
@@ -86,18 +111,20 @@ var today = dd + '/' + mm + '/' + yyyy;
         
       var post = news_data.articles[4].title + '<br>'+ news_data.articles[4].description + '<br>'+news_data.articles[4].publishedAt + '<br>'+ news_data.articles[4].source.name
       var string = ''
-        for(var i = 0; i<news_data.length - 1;i++){
+
+      document.getElementById('news_output').innerHTML = post  
+       // for(var i = 0; i<news_data.length - 1;i++){
             
-       string += news_data.articles[i].title + news_data.articles[i].description + news_data.articles[i].publishedAt + news_data.articles[i].source.name
+       //string += news_data.articles[i].title + news_data.articles[i].description + news_data.articles[i].publishedAt + news_data.articles[i].source.name
                 
          
          }
-         console.log(string) 
+         //console.log(string) 
          
          
-            document.getElementById('news_output').innerHTML = post  
-                
- }
+            
+                      
+ 
 
         async function weather() {
 
@@ -115,12 +142,12 @@ var today = dd + '/' + mm + '/' + yyyy;
             f_temp = ((k_temp - 273.15) * 1.8 + 32).toFixed(1);
             
             string ='<div> '+data.name+' <br> Currently is: '+f_temp+' F </<div><div>'+data.main.humidity+' % Humidity </div> <div> '+data.weather[0].description+'</div>';
-            console.log(data.weather[0].main)
+            //console.log(data.weather[0].main)
             //console.log(data.main.temp)
             //  console.log(data.main.humidity)
             //  console.log(data.weather[0].main)
-             console.log(data.weather[0].description)
-             console.log(data.weather[0].icon)
+            // console.log(data.weather[0].description)
+            // console.log(data.weather[0].icon)
             // console.log(data.name)
         
          document.getElementById('today_weather').innerHTML =string

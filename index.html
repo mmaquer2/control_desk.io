@@ -13,9 +13,7 @@
 </head>
 
 <body>
-    <header>
-       <center> <h2></h2></center>  
-    </header>
+   
     
     <div class="navbar">
       <button  class="btn btn-primary" onclick ="stock_news()"> Run </button>
@@ -72,30 +70,31 @@
     </div>
   </div>
 
-  <br>
   <div id = "grid">
+  <div id = "aside-3">
+
+      <div id = "title"><h3> Top Trending News Headlines </h3></div>
+  
+    <p id="news_output"></p>
+  
+  </div>
+  
+
+  
     <div id = "aside-1">
    <div id = "title"> <h3>Watch List</h3> </div>
-        <br>
-        
-        <p id="stock_output"></p>
-  </div>
+   <p>SPY: </p> <p>DIA: </p> <p>NSDQ: </p>
+      <p id="watchlist">     </p>
 
-  <div id = "aside-2">
-    <div id = "title"><h3> Economics News </h3></div>
-    <p id="stock_news"></p>
+    </div>
 
-</div>
+    <div id = "aside-2">
+        <div id = "title"><h3> Economics News </h3></div>
+        <p id="stock_news">      </p>
+    
+    </div>
 
-<div id = "aside-3">
-
-    <div id = "title"><h3> Top Trending News Headlines </h3></div>
-
-  <p id="news_output"></p>
-
-</div>
-
-
+  
   
   <div id = "main1">
       <div id = "title"><h3>Current Weather </h3></div>
@@ -104,7 +103,7 @@
     
     
   </div>
-  </div>
+  
 
   <div id="main2">
       <div id = "title"><h3> 7 Day Weather Outlook </h3></div>
@@ -114,9 +113,26 @@
       
   </div>
     
+  <div id="main3">
+      <div id = "title"><h3> Calculator </h3></div>
+      <br>
+      <div class="input-group input-group-lg">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-md">Wolfram Alpha Search</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <br>
+
+
+      <button type="button" class="btn btn-primary btn-lg">Primary</button>
+      <p id ="wolf"></p>
+    
+    
+      
+  </div>
 </div> 
-  
-  
+</div>
 
   </div>
   <br>
