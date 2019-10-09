@@ -1,0 +1,223 @@
+html {
+
+  background-color:#383838;
+  font-family: 'lucida console',monospace;
+  padding: 20px  15px;
+}
+
+
+span {margin: 0 10px;}
+
+#grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 500px 1fr 1fr 1fr 500px;
+  grid-gap:8px;
+  background-color: #383838;
+  box-shadow: 5px 5px 5px 5px grey;
+  grid-template: 
+                  
+                 
+                 "aside3 aside3 aside3"
+                 "aside2 aside2 aside2"
+                 "aside1 aside1 aside1"       
+                 "main1 main1 main1"
+                 "main2 main2 main2";
+  }
+
+
+
+  #aside-1 { grid-area: aside1; background-color:white; height:640px;text-align: center;}
+
+  #aside-2 {grid-area: aside2; background-color:white;height:640px;text-align:center;}
+  
+  #aside-3 { grid-area: aside3; background-color:white;height:640px;text-align:center;}
+  
+ 
+
+  #main1 {grid-area: main1; display: inline-block;  background-color:white; height:170px; text-align: center; font-size:18px; }
+
+  #main2 {grid-area: main2;  background-color:white; height:350px; text-align: center; font-size:18px; }
+
+
+
+header {
+
+    background-color:#383838; height: 5px;
+    font-family: 'lucida console',monospace;
+    color:white;
+}
+
+#title {
+
+  text-transform: uppercase;
+  font-family: 'lucida console',monospace;
+  font-weight: bold;
+
+
+}
+
+
+
+
+
+@keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+  }
+  .tcontainer{
+    width: 100%;
+    overflow: hidden;
+  }
+  .ticker-wrap {
+    width: 100%;
+    padding-left: 100%;
+    background-color: black;
+    color: green;
+    height: 100px;
+    font-size:30px;
+    border: 10px grey;
+  }
+  .ticker-move {
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 100%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: ticker;
+    animation-duration: 60s;
+  }
+  .ticker-move:hover{
+    animation-play-state: paused;
+  }
+  .ticker-item{
+    margin-top:10px;
+    display: inline-block;
+    margin-right:5px;
+  }
+
+
+
+ .main-1 {
+    height:300px;
+    width:450px;
+    display:inline-block;
+    box-shadow: 5px 5px 5px 5px grey;
+    padding: 50px 50px;
+    background-color:white;
+    
+    
+ }
+
+ .main-2 {
+  height:200px;
+  width:450px;
+  display:inline-block;
+  box-shadow: 5px 5px 5px 5px grey;
+  padding: 50px 50px;
+  background-color:white;
+ }
+  
+  .card {
+
+    height:300px;
+    width:400px;
+    margin-top:10px;
+    
+    position: absolute;
+    display:inline-block;
+    box-shadow: 5px 5px 5px 5px grey;
+   
+    background-color:white;
+    
+
+    
+  }
+  
+
+  .news-box {
+
+    height:300px;
+    width:500px;
+    display:inline-block;
+    box-shadow: 5px 5px 5px 5px grey;
+    padding: 50px 50px;
+    background-color:white;
+    margin-right:20px;
+
+  }
+
+  footer {
+    background-color:#383838; height: 70px;text-align: center;
+  }
+
+  .navbar {
+    background-color: #383838;
+    height:70px;
+  }
+
+
+  .subnav {
+    float: left;
+    overflow: hidden;
+    height:50px;
+    background-color:#383838;
+    color:white;
+  }
+
+  .subnav p {
+    color:white;
+  }
+  
+  /* Subnav button */
+  .subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    margin: 0;
+    background-color:#383838;
+    
+  }
+  
+  /* Add a red background color to navigation links on hover */
+  .navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: #444;
+  }
+  
+  /* Style the subnav content - positioned absolute */
+  .subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color:#383838;
+    width: 100%;
+    z-index: 1;
+    
+  }
+  
+  /* Style the subnav links */
+  .subnav-content a {
+    float:left;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding:5px;
+    margin: 10px;
+
+  }
+  .subnav-content span {
+    margin: 0 10px;
+  }
+  
+  /* Add a grey background color on hover */
+  .subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+  }
+  
+  /* When you move the mouse over the subnav container, open the subnav content */
+  .subnav:hover .subnav-content {
+    display: block;
+  }
