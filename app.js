@@ -7,6 +7,7 @@ window.onload = function(){
   // this.stock_api();
    this.news_api();
    this.stock_news();
+   this.five_day();
 
 }
 
@@ -41,11 +42,14 @@ var today = dd + '/' + mm + '/' + yyyy;
         const response = await fetch(stock_news_url);
         const news_data = await response.json();
 
-        var output = news_data;
-        console.log(output)
+         
+        console.log(news_data)
+
+        var output = news_data.news[1].title +'<br>'+ news_data.news[1].summary +'<br>'+ news_data.news[1].publication_date +'<br>'+ news_data.news[1].url
+
 
         //output to front end 
-       // document.getElementById('stock_news').innerHTML = output 
+        document.getElementById('stock_news').innerHTML = output 
     }
 
     //const watchlist = []
@@ -77,22 +81,22 @@ var today = dd + '/' + mm + '/' + yyyy;
         const response = await fetch(news_url);
         const news_data = await response.json();
 
-        var string = ""
-        var i = 0;
-        var titles = ""
-        var desc = ""
         
-       string = news_data.articles[1].title + news_data.articles[1].description + news_data.articles[1].publishedAt + news_data.articles[1].source.name
         
-        /*for(i; i<news_data.articles.length;i++){
-                titles = news_data.articles[i].title;
-                desc = news_data.articles[i].description;
-                console.log(titles,desc)
+        
+      var post = news_data.articles[4].title + '<br>'+ news_data.articles[4].description + '<br>'+news_data.articles[4].publishedAt + '<br>'+ news_data.articles[4].source.name
+      var string = ''
+        for(var i = 0; i<news_data.length - 1;i++){
             
+       string += news_data.articles[i].title + news_data.articles[i].description + news_data.articles[i].publishedAt + news_data.articles[i].source.name
+                
+         
          }
-         */
-            document.getElementById('news_output').innerHTML =string   
-                //string ='<div class="card"> <div><span class=""> City: '+data.name+'</span></div><div class=""></div><div class="col-xs-5"> Currently is: '+f_temp+' F </div><div>'+data.main.humidity+' % Humidity </div> <div> '+data.weather[0].description+'</div> </div><br></br>';
+         console.log(string) 
+         
+         
+            document.getElementById('news_output').innerHTML = post  
+                
  }
 
         async function weather() {
@@ -126,8 +130,14 @@ var today = dd + '/' + mm + '/' + yyyy;
         }
 
         //five day weather forecast:
-        // api.openweathermap.org/data/2.5/forecast?q=nashville&APPID=a488d31fefafdc561500bdfd1b695f5d
+        const url3 = ('https://api.openweathermap.org/data/2.5/forecast?q=nashville&APPID=a488d31fefafdc561500bdfd1b695f5d')
+        async function five_day() {
+            const response = await fetch(url3);
+            const display = await response.json();
 
+            console.log(display)
+
+        }
        
 
         //document.getElementById('five_day_weather').innerHTML = f_temp;
