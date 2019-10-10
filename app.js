@@ -134,6 +134,7 @@ var today = dd + '/' + mm + '/' + yyyy;
     }
 
 
+        //have news sources written in tag tags
 
 
 
@@ -147,7 +148,7 @@ var today = dd + '/' + mm + '/' + yyyy;
         
         
         
-      var post = news_data.articles[4].title + '<br>'+ news_data.articles[4].description + '<br>'+news_data.articles[4].publishedAt + '<br>'+ news_data.articles[4].source.name
+      var post = '<h5>'+ news_data.articles[4].title + '</h5>' +  news_data.articles[4].description + '<br>'+news_data.articles[4].publishedAt + '<br>'+ '<a href="'+  news_data.articles[4].source.name + '">' + news_data.articles[4].source.name +'</a>'  
       var string = ''
 
       document.getElementById('news_output').innerHTML = post  

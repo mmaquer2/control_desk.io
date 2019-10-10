@@ -13,7 +13,7 @@ span {margin: 0 10px;}
   grid-template-columns: 1fr 1fr 2fr 1fr;
   grid-template-rows: 500px 1fr 1fr 1fr 1fr 500px;
   grid-gap:12px;
-  background-color: ;
+  background-color: #313a41;
  
   border-radius: 30px;
   grid-template: 
@@ -30,23 +30,23 @@ span {margin: 0 10px;}
 
 
 
-  #aside-1 { grid-area: aside1; background-color:white; height:640px;text-align: center;border-radius: 25px;}
+  #aside-1 { grid-area: aside1; background-color:#203145; color:white; height:640px;text-align: center;border-radius: 25px;}
 
-  #aside-2 {grid-area: aside2; background-color:white;height:640px;text-align:center;border-radius: 25px;}
+  #aside-2 {grid-area: aside2; background-color:#203145; color:white;height:640px;text-align:center;border-radius: 25px;}
   
-  #aside-3 { grid-area: aside3; background-color:white;height:640px;text-align:center;border-radius: 25px;}
+  #aside-3 { grid-area: aside3; background-color:#203145; color:white;;height:640px;text-align:center;border-radius: 25px;}
   
  
 
-  #main1 {grid-area: main1; display: inline-block;  background-color:white; height:170px; text-align: center; font-size:18px;border-radius: 25px; }
+  #main1 {grid-area: main1; display: inline-block;  background-color:#203145; color:white; height:170px; text-align: center; font-size:18px;border-radius: 25px; }
 
-  #main2 {grid-area: main2;  background-color:white; height:350px; text-align: center; font-size:18px; border-radius: 25px;}
+  #main2 {grid-area: main2;  background-color:#203145; color:white;height:350px; text-align: center; font-size:18px; border-radius: 25px;}
 
-  #main3 {grid-area: main3;  background-color:white; height:350px; text-align: center; font-size:18px; border-radius: 25px;}
+  #main3 {grid-area: main3;  background-color:#203145; color:white; height:350px; text-align: center; font-size:18px; border-radius: 25px;}
 
   #card {
 
-    grid-area: card; background-color:white;
+    grid-area: card; background-color:#203145; color:white;
     border-radius: 25px;
     text-align: center;
     font-size:18px;
@@ -140,17 +140,6 @@ span {margin: 0 10px;}
   }
   
 
-  .news-box {
-
-    height:300px;
-    width:500px;
-    display:inline-block;
-    box-shadow: 5px 5px 5px 5px grey;
-    padding: 50px 50px;
-    background-color:white;
-    margin-right:20px;
-
-  }
 
   footer {
     background-color:#313a41; height: 70px;text-align: center;
