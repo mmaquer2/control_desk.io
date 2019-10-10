@@ -1,8 +1,8 @@
 html {
 
-  background-color:#383838;
+  background-color:#313a41;
   font-family: 'lucida console',monospace;
-  padding: 20px  15px;
+  padding: 40px  40px;
 }
 
 
@@ -10,37 +10,49 @@ span {margin: 0 10px;}
 
 #grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 2fr 1fr;
   grid-template-rows: 500px 1fr 1fr 1fr 1fr 500px;
   grid-gap:12px;
-  background-color: #383838;
-  box-shadow: 5px 5px 5px 5px grey;
+  background-color: ;
+ 
+  border-radius: 30px;
   grid-template: 
                   
                  
                  "aside3 aside3 aside3"
                  "aside2 aside2 aside2"
                  "aside1 aside1 aside1"       
-                 "main1 main1 main1"
+                 "main1 main1 card"
+                 " main1 main1 card"
                  "main2 main2 main2"
                  "main3 main3 main3";
   }
 
 
 
-  #aside-1 { grid-area: aside1; background-color:white; height:640px;text-align: center;}
+  #aside-1 { grid-area: aside1; background-color:white; height:640px;text-align: center;border-radius: 25px;}
 
-  #aside-2 {grid-area: aside2; background-color:white;height:640px;text-align:center;}
+  #aside-2 {grid-area: aside2; background-color:white;height:640px;text-align:center;border-radius: 25px;}
   
-  #aside-3 { grid-area: aside3; background-color:white;height:640px;text-align:center;}
+  #aside-3 { grid-area: aside3; background-color:white;height:640px;text-align:center;border-radius: 25px;}
   
  
 
-  #main1 {grid-area: main1; display: inline-block;  background-color:white; height:170px; text-align: center; font-size:18px; }
+  #main1 {grid-area: main1; display: inline-block;  background-color:white; height:170px; text-align: center; font-size:18px;border-radius: 25px; }
 
-  #main2 {grid-area: main2;  background-color:white; height:350px; text-align: center; font-size:18px; }
+  #main2 {grid-area: main2;  background-color:white; height:350px; text-align: center; font-size:18px; border-radius: 25px;}
 
-  #main3 {grid-area: main3;  background-color:white; height:350px; text-align: center; font-size:18px; }
+  #main3 {grid-area: main3;  background-color:white; height:350px; text-align: center; font-size:18px; border-radius: 25px;}
+
+  #card {
+
+    grid-area: card; background-color:white;
+    border-radius: 25px;
+    text-align: center;
+    font-size:18px;
+
+    
+  }
 
 
 
@@ -49,6 +61,10 @@ span {margin: 0 10px;}
   text-transform: uppercase;
   font-family: 'lucida console',monospace;
   font-weight: bold;
+  background-color:#383838;
+  color:white;
+  
+  border-radius: 25px;
 
 }
 
@@ -102,6 +118,8 @@ span {margin: 0 10px;}
     
  }
 
+
+
  .main-2 {
   height:200px;
   width:450px;
@@ -111,20 +129,14 @@ span {margin: 0 10px;}
   background-color:white;
  }
   
-  .card {
+  
 
-    height:300px;
-    width:400px;
-    margin-top:10px;
-    
-    position: absolute;
-    display:inline-block;
-    box-shadow: 5px 5px 5px 5px grey;
-   
-    background-color:white;
-    
 
-    
+  .display {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+
   }
   
 
@@ -141,11 +153,11 @@ span {margin: 0 10px;}
   }
 
   footer {
-    background-color:#383838; height: 70px;text-align: center;
+    background-color:#313a41; height: 70px;text-align: center;
   }
 
   .navbar {
-    background-color: #383838;
+    background-color:#313a41;
     height:70px;
   }
 
@@ -154,7 +166,7 @@ span {margin: 0 10px;}
     float: left;
     overflow: hidden;
     height:50px;
-    background-color:#383838;
+    background-color:#313a41;
     color:white;
   }
 
@@ -170,7 +182,7 @@ span {margin: 0 10px;}
     color: white;
     padding: 14px 16px;
     margin: 0;
-    background-color:#383838;
+    background-color:#313a41;
     
   }
   

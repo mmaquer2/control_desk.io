@@ -9,6 +9,7 @@ window.onload = function(){
    this.stock_news();
    this.five_day();
    this.stock_test();
+   this.index();
 
 }
 
@@ -96,6 +97,43 @@ var today = dd + '/' + mm + '/' + yyyy;
         document.getElementById('watchlist').innerHTML = stocks;
 
     }
+
+    //indicies search
+    //how to automate this for each url
+
+    async function index() {
+            //Indexs of the USA Stock market DJI, SPX, NDX
+            const url = ('https://api-v2.intrinio.com/indices/stock_market/$DJI/data_point/level/text?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+            const index = await fetch(url);
+            const dji = await index.json();
+
+            const spx_url = ('https://api-v2.intrinio.com/indices/stock_market/$SPX/data_point/level/text?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+            const spx_data = await fetch(spx_url);
+            const spx = await spx_data.json();
+
+            const ndx_url = ('https://api-v2.intrinio.com/indices/stock_market/$NDX/data_point/level/text?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+            const ndx_data = await fetch(ndx_url);
+            const ndx = await ndx_data.json();
+
+
+           // console.log(ndx)
+            //console.log(dji)
+            //console.log(spx)
+
+            //% change of stock or index price 
+
+            document.getElementById('SPX').innerHTML = spx; 
+            document.getElementById('NDX').innerHTML = ndx;
+            document.getElementById('DJI').innerHTML = dji;
+
+            
+            
+            
+
+
+    }
+
+
 
 
 
