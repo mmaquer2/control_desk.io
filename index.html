@@ -13,17 +13,15 @@
 </head>
 
 <body>
-    <header>
-       <center> <h2></h2></center>  
-    </header>
+   
     
     <div class="navbar">
       <button  class="btn btn-primary" onclick ="stock_news()"> Run </button>
             <div class="subnav">
               <button class="subnavbtn"> News <i class="fa fa-caret-down"></i></button>
               <div class="subnav-content">
-                <a href="#bring">Washington Post </a><span></span>
-                <a href="#deliver"> New York Times  </a>
+                <a href="https://washingtonpost.com">Washington Post </a><span></span>
+                <a href="https://newyorktimes.com"> New York Times  </a>
 
                 
               </div>
@@ -31,7 +29,7 @@
             <div class="subnav">
                 <button class="subnavbtn">  Finance  <i class="fa fa-caret-down"></i></button>
                 <div class="subnav-content">
-                  <a href="https://espn.com"> Bloomberg</a>
+                  <a href="https://bloomberg.com"> Bloomberg</a>
                   <span><a href="#link1"> Wall Street Journal </a>
                   <a href="link2"> Market Watch</a></span>
                   
@@ -41,7 +39,7 @@
               <button class="subnavbtn">  Sports  <i class="fa fa-caret-down"></i></button>
               <div class="subnav-content">
                 <a href="https://espn.com">ESPN</a>
-                <span><a href="#link1">Formula One</a>
+                <span><a href="https://www.formulaone.com">Formula One</a>
                 <a href="link2"></a></span>
                 
               </div>
@@ -59,9 +57,12 @@
       <div class="ticker-move">
         <div class="ticker-item"> <p>Current Weather: </p> </div>
         <div class="ticker-item"> <p id = "Weather_ticker"> </p></div>
-        <div class="ticker-item"><p>SPY</p> <p id="spy">  </p></div>
-        <div class="ticker-item"><p>DIA</p>  <p id="DIA"> </p></div>
-        <div class="ticker-item"><p>NSDQ</p></div>
+        <div class="ticker-item"><p>SPX</p> </div>
+        <div class="ticker-item"> <p id="SPX">  </p></div>
+        <div class="ticker-item"><p>DJI</p>  </div>
+        <div class="ticker-item"> <p id="DJI">  </p></div>
+        <div class="ticker-item"><p>NDX</p></div>
+        <div class="ticker-item"> <p id="NDX">  </p></div>
         <div class="ticker-item"><p>10 Year Bond:</p></div>
         <div class="ticker-item"><p>30 Year Bond:</p></div>
         <div class="ticker-item"> <p>Traffic Report:  </p></div>
@@ -72,30 +73,32 @@
     </div>
   </div>
 
-  <br>
   <div id = "grid">
+  <div id = "aside-3">
+
+      <div id = "title"><h3> Featured Stories </h3></div>
+          <div id="display">
+    <p id="news_output"></p>
+  </div>
+  
+  </div>
+  
+
+  
     <div id = "aside-1">
    <div id = "title"> <h3>Watch List</h3> </div>
-        <br>
-        
-        <p id="stock_output"></p>
-  </div>
+   
+      <p id="watchlist">     </p>
 
-  <div id = "aside-2">
-    <div id = "title"><h3> Economics News </h3></div>
-    <p id="stock_news"></p>
+    </div>
 
-</div>
+    <div id = "aside-2">
+        <div id = "title"><h3> Economic and Finance News </h3></div>
+        <p id="stock_news">      </p>
+    
+    </div>
 
-<div id = "aside-3">
-
-    <div id = "title"><h3> Top Trending News Headlines </h3></div>
-
-  <p id="news_output"></p>
-
-</div>
-
-
+  
   
   <div id = "main1">
       <div id = "title"><h3>Current Weather </h3></div>
@@ -104,7 +107,15 @@
     
     
   </div>
+
+  <div id = "card">
+      <div id = "title"><h3>Local Traffic</h3></div>
+      <p class ="" id ="today_weather"></p>
+    
+    
+    
   </div>
+  
 
   <div id="main2">
       <div id = "title"><h3> 7 Day Weather Outlook </h3></div>
@@ -114,18 +125,19 @@
       
   </div>
     
+  <div id="main3">
+      <div id = "title"><h3> Sports </h3></div>
+      
+      
+      <p id ="wolf"></p>
+    
+    
+      
+  </div>
 </div> 
-  
-  
+</div>
 
-  </div>
-  <br>
-  
-  </div>
-  <footer>
-
-    <a href="">Created by Mike Maquera, 2019 </a>
-  </footer>
+ 
 </body>
 </html>
 

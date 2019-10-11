@@ -8,6 +8,8 @@ window.onload = function(){
    this.news_api();
    this.stock_news();
    this.five_day();
+   this.stock_test();
+   this.index();
 
 }
 
@@ -35,24 +37,21 @@ var today = dd + '/' + mm + '/' + yyyy;
 
  }
 
-    const stock_news_url = ('https://api-v2.intrinio.com/companies/news?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+    
 
     async function stock_news() {
-        
+        const stock_news_url = ('https://api-v2.intrinio.com/companies/news?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')    
         const response = await fetch(stock_news_url);
         const news_data = await response.json();
 
-         
-        console.log(news_data)
 
-        var output = news_data.news[1].title +'<br>'+ news_data.news[1].summary +'<br>'+ news_data.news[1].publication_date +'<br>'+ news_data.news[1].url
-
-
-        //output to front end 
-        document.getElementById('stock_news').innerHTML = output 
+        var output = '<h5>'+ news_data.news[1].title +'</h5>'+ news_data.news[1].summary +'<br>'+ news_data.news[1].publication_date +'<br>'+ '<a href="'+  news_data.news[1].url + '">' + 'Link' +'</a>'
+        
+    
+        document.getElementById('stock_news').innerHTML = output; 
     }
 
-    //const watchlist = []
+    /*
     //const alpha_key = ('YIF9NU7FLVJWG46Q');
     const url = ('https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=MSFT&apikey=YIF9NU7FLVJWG46Q');
     async function stock_api() {
@@ -60,17 +59,60 @@ var today = dd + '/' + mm + '/' + yyyy;
         const response = await fetch(url);
         const stock_data = await response.json();  
         console.log(stock_data)
+    }
+    */
 
-        var i = 0;
-        var price = ''
-      /*  for(i;i<stock_data.length;i++){
-            price = stock_data.high[i]
-            console.log(price)
-        }
-*/
-      alert('hello world')
+    //stock api with intrino stuff
+   // https://api-v2.intrinio.com/companies/AAPL?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5
+    //https://api-v2.intrinio.com/securities/AAPL/prices/realtime
+    async function stock_test(){
+        const stock_url = ('https://api-v2.intrinio.com/securities/AAPL/prices/realtime?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+        const data = await fetch(stock_url);
+        const stock_data = await data.json();
+        console.log(stock_data)
+
+        var stocks = "hello world"
+        document.getElementById('watchlist').innerHTML = stocks;
 
     }
+
+    //indicies search
+    //how to automate this for each url
+
+    async function index() {
+            //Indexs of the USA Stock market DJI, SPX, NDX
+            const url = ('https://api-v2.intrinio.com/indices/stock_market/$DJI/data_point/level/text?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+            const index = await fetch(url);
+            const dji = await index.json();
+
+            const spx_url = ('https://api-v2.intrinio.com/indices/stock_market/$SPX/data_point/level/text?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+            const spx_data = await fetch(spx_url);
+            const spx = await spx_data.json();
+
+            const ndx_url = ('https://api-v2.intrinio.com/indices/stock_market/$NDX/data_point/level/text?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+            const ndx_data = await fetch(ndx_url);
+            const ndx = await ndx_data.json();
+
+
+           // console.log(ndx)
+            //console.log(dji)
+            //console.log(spx)
+
+            //% change of stock or index price 
+
+            document.getElementById('SPX').innerHTML = spx; 
+            document.getElementById('NDX').innerHTML = ndx;
+            document.getElementById('DJI').innerHTML = dji;
+
+            
+            
+            
+
+
+    }
+
+
+        //have news sources written in tag tags
 
 
 
@@ -84,20 +126,20 @@ var today = dd + '/' + mm + '/' + yyyy;
         
         
         
-      var post = news_data.articles[4].title + '<br>'+ news_data.articles[4].description + '<br>'+news_data.articles[4].publishedAt + '<br>'+ news_data.articles[4].source.name
-      var string = ''
-        for(var i = 0; i<news_data.length - 1;i++){
+      var post = '<h5>'+ news_data.articles[4].title + '</h5>' +  news_data.articles[4].description + '<br>'+news_data.articles[4].publishedAt + '<br>'+ '<a href="'+  news_data.articles[4].source.name + '">' + 'Link' +'</a><hr></hr>'  
+    
+
+      document.getElementById('news_output').innerHTML = post  
+
             
-       string += news_data.articles[i].title + news_data.articles[i].description + news_data.articles[i].publishedAt + news_data.articles[i].source.name
                 
          
          }
-         console.log(string) 
+
          
-         
-            document.getElementById('news_output').innerHTML = post  
-                
- }
+            
+                      
+ 
 
         async function weather() {
 
@@ -115,12 +157,12 @@ var today = dd + '/' + mm + '/' + yyyy;
             f_temp = ((k_temp - 273.15) * 1.8 + 32).toFixed(1);
             
             string ='<div> '+data.name+' <br> Currently is: '+f_temp+' F </<div><div>'+data.main.humidity+' % Humidity </div> <div> '+data.weather[0].description+'</div>';
-            console.log(data.weather[0].main)
+            //console.log(data.weather[0].main)
             //console.log(data.main.temp)
             //  console.log(data.main.humidity)
             //  console.log(data.weather[0].main)
-             console.log(data.weather[0].description)
-             console.log(data.weather[0].icon)
+            // console.log(data.weather[0].description)
+            // console.log(data.weather[0].icon)
             // console.log(data.name)
         
          document.getElementById('today_weather').innerHTML =string
@@ -135,7 +177,15 @@ var today = dd + '/' + mm + '/' + yyyy;
             const response = await fetch(url3);
             const display = await response.json();
 
+
             console.log(display)
+
+           var temp = display.list[0].main.temp_max
+           var wthr = display.list[0].weather[0].main
+           var desc = display.list[0].weather[0].description
+
+            var tmrw = (temp +' , '+wthr + ', ' + desc)
+            console.log(tmrw)
 
         }
        
@@ -163,6 +213,11 @@ var today = dd + '/' + mm + '/' + yyyy;
          }
 
 
+
+            //api tests in progress
+         /*
+
+
          //wolfram_alpha api connection
         
          //24KJW8-K57P224TRW
@@ -186,7 +241,7 @@ var today = dd + '/' + mm + '/' + yyyy;
 
 
     
-/*
+
     
     
 
