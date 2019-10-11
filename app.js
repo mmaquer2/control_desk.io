@@ -44,27 +44,14 @@ var today = dd + '/' + mm + '/' + yyyy;
         const response = await fetch(stock_news_url);
         const news_data = await response.json();
 
-         
-        //console.log(news_data)
 
-        //var output = news_data.news[1].title +'<br>'+ news_data.news[1].summary +'<br>'+ news_data.news[1].publication_date +'<br>'+ news_data.news[1].url
-        console.log(news_data.news[3].title)
-        
-        for (var i = 0; i < news_data; i++) {
-            var test_output = "";
-            //for (j in news_data.news) {
-            //test_output += '<div class = "card>">'+news_data.news.summary +'</div>'
-         test_output = (news.title[i])
-            
-        };
-        console.log(test_output)
+        var output = '<h5>'+ news_data.news[1].title +'</h5>'+ news_data.news[1].summary +'<br>'+ news_data.news[1].publication_date +'<br>'+ '<a href="'+  news_data.news[1].url + '">' + 'Link' +'</a>'
         
     
-        //output to front end 
-        //document.getElementById('stock_news').innerHTML = test_output 
+        document.getElementById('stock_news').innerHTML = output; 
     }
 
-    //const watchlist = []
+    /*
     //const alpha_key = ('YIF9NU7FLVJWG46Q');
     const url = ('https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=MSFT&apikey=YIF9NU7FLVJWG46Q');
     async function stock_api() {
@@ -72,17 +59,8 @@ var today = dd + '/' + mm + '/' + yyyy;
         const response = await fetch(url);
         const stock_data = await response.json();  
         console.log(stock_data)
-
-        var i = 0;
-        var price = ''
-      /*  for(i;i<stock_data.length;i++){
-            price = stock_data.high[i]
-            console.log(price)
-        }
-*/
-      
-
     }
+    */
 
     //stock api with intrino stuff
    // https://api-v2.intrinio.com/companies/AAPL?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5
@@ -148,18 +126,16 @@ var today = dd + '/' + mm + '/' + yyyy;
         
         
         
-      var post = '<h5>'+ news_data.articles[4].title + '</h5>' +  news_data.articles[4].description + '<br>'+news_data.articles[4].publishedAt + '<br>'+ '<a href="'+  news_data.articles[4].source.name + '">' + news_data.articles[4].source.name +'</a>'  
-      var string = ''
+      var post = '<h5>'+ news_data.articles[4].title + '</h5>' +  news_data.articles[4].description + '<br>'+news_data.articles[4].publishedAt + '<br>'+ '<a href="'+  news_data.articles[4].source.name + '">' + 'Link' +'</a><hr></hr>'  
+    
 
       document.getElementById('news_output').innerHTML = post  
-       // for(var i = 0; i<news_data.length - 1;i++){
+
             
-       //string += news_data.articles[i].title + news_data.articles[i].description + news_data.articles[i].publishedAt + news_data.articles[i].source.name
                 
          
          }
-         //console.log(string) 
-         
+
          
             
                       
@@ -201,7 +177,15 @@ var today = dd + '/' + mm + '/' + yyyy;
             const response = await fetch(url3);
             const display = await response.json();
 
+
             console.log(display)
+
+           var temp = display.list[0].main.temp_max
+           var wthr = display.list[0].weather[0].main
+           var desc = display.list[0].weather[0].description
+
+            var tmrw = (temp +' , '+wthr + ', ' + desc)
+            console.log(tmrw)
 
         }
        
@@ -229,6 +213,11 @@ var today = dd + '/' + mm + '/' + yyyy;
          }
 
 
+
+            //api tests in progress
+         /*
+
+
          //wolfram_alpha api connection
         
          //24KJW8-K57P224TRW
@@ -252,7 +241,7 @@ var today = dd + '/' + mm + '/' + yyyy;
 
 
     
-/*
+
     
     
 
