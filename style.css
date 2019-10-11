@@ -38,7 +38,7 @@ span {margin: 0 10px;}
   
  
 
-  #main1 {grid-area: main1; display: inline-block;  background-color:#203145; color:white; height:170px; text-align: center; font-size:18px;border-radius: 25px; }
+  #main1 {grid-area: main1; display: inline-block;  background-color:#203145; color:white; height:270px; text-align: center; font-size:18px;border-radius: 25px; }
 
   #main2 {grid-area: main2;  background-color:#203145; color:white;height:350px; text-align: center; font-size:18px; border-radius: 25px;}
 
@@ -50,9 +50,18 @@ span {margin: 0 10px;}
     border-radius: 25px;
     text-align: center;
     font-size:18px;
+    height:270px;
 
     
   }
+
+
+  #map {
+    height: 210px;
+    width:800px;
+  }
+  /* Optional: Makes the sample page fill the window. */
+
 
 
 
