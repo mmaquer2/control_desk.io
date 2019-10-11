@@ -44,9 +44,20 @@ var today = dd + '/' + mm + '/' + yyyy;
         const response = await fetch(stock_news_url);
         const news_data = await response.json();
 
+        var output = ""
+        let chars = news_data.news;
+            for(let i =0; i < chars.length;i++){
+            //console.log(chars[i])
+            console.log(chars[i].title)
+            console.log(chars[i].summary)
+            console.log(chars[i].publication_date)
+            console.log(chars[i].url)
 
-        var output = '<h5>'+ news_data.news[1].title +'</h5>'+ news_data.news[1].summary +'<br>'+ news_data.news[1].publication_date +'<br>'+ '<a href="'+  news_data.news[1].url + '">' + 'Link' +'</a>'
-        
+            output += '<h5>'+ chars[i].title+ '</h5>'+ chars[i].summary + '<br>' +'<a href="'+  chars[i].url + '">' + 'Link' +'</a><hr></hr>'
+
+            
+
+            }
     
         document.getElementById('stock_news').innerHTML = output; 
     }
@@ -71,8 +82,12 @@ var today = dd + '/' + mm + '/' + yyyy;
         const stock_data = await data.json();
         console.log(stock_data)
 
-        var stocks = "hello world"
-        document.getElementById('watchlist').innerHTML = stocks;
+        var watch = ['MSFT', 'APPL', 'INTC']
+        document.getElementById('watchlist').innerHTML = watch;
+
+        var price= []
+
+        var change_dif = []
 
     }
 

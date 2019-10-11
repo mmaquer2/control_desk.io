@@ -215,3 +215,23 @@ span {margin: 0 10px;}
   .subnav:hover .subnav-content {
     display: block;
   }
+
+
+
+
+
+
+  .FixedHeightContainer
+{
+  
+  height: auto;
+  width:auto; 
+  padding:3px; 
+    
+}
+.Content
+{
+  height:500px;
+   overflow:auto;
+    
+}
