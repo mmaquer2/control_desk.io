@@ -30,11 +30,11 @@ span {margin: 0 10px;}
 
 
 
-  #aside-1 { grid-area: aside1; background-color:#203145; color:white; height:640px;text-align: center;border-radius: 25px;}
+  #aside-1 { grid-area: aside1; background-color:#203145; color:white; height:540px;text-align: center;border-radius: 25px;}
 
-  #aside-2 {grid-area: aside2; background-color:#203145; color:white;height:640px;text-align:center;border-radius: 25px;}
+  #aside-2 {grid-area: aside2; background-color:#203145; color:white;height:540px;text-align:center;border-radius: 25px;}
   
-  #aside-3 { grid-area: aside3; background-color:#203145; color:white;;height:640px;text-align:center;border-radius: 25px;}
+  #aside-3 { grid-area: aside3; background-color:#203145; color:white;;height:540px;text-align:center;border-radius: 25px;}
   
  
 

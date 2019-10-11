@@ -48,10 +48,10 @@ var today = dd + '/' + mm + '/' + yyyy;
         let chars = news_data.news;
             for(let i =0; i < chars.length;i++){
             //console.log(chars[i])
-            console.log(chars[i].title)
-            console.log(chars[i].summary)
-            console.log(chars[i].publication_date)
-            console.log(chars[i].url)
+        //    console.log(chars[i].title)
+          //  console.log(chars[i].summary)
+          //  console.log(chars[i].publication_date)
+           // console.log(chars[i].url)
 
             output += '<h5>'+ chars[i].title+ '</h5>'+ chars[i].summary + '<br>' +'<a href="'+  chars[i].url + '">' + 'Link' +'</a><hr></hr>'
 
@@ -138,25 +138,24 @@ var today = dd + '/' + mm + '/' + yyyy;
         const response = await fetch(news_url);
         const news_data = await response.json();
 
-        
-        
-        
-      var post = '<h5>'+ news_data.articles[4].title + '</h5>' +  news_data.articles[4].description + '<br>'+news_data.articles[4].publishedAt + '<br>'+ '<a href="'+  news_data.articles[4].source.name + '">' + 'Link' +'</a><hr></hr>'  
-    
 
-      document.getElementById('news_output').innerHTML = post  
+        var post = ""
+        let chars = news_data.articles;
+            for(let i =0; i < chars.length;i++){
+            //console.log(chars[i])
+            //console.log(chars[i].title)
+            //console.log(chars[i].description)
 
-            
-                
+            post += '<h5>'+ chars[i].title+ '</h5>'+ chars[i].description + '<br>' +'<a href="'+  chars[i].source + '">' + 'Link' +'</a><hr></hr>'
+
+            }
+          
+            document.getElementById('news_output').innerHTML = post  
+
+             }
+
          
-         }
-
-         
-            
-                      
- 
-
-        async function weather() {
+    async function weather() {
 
             const start = ('https://api.openweathermap.org/data/2.5/weather?q=')
             const id =('&APPID=a488d31fefafdc561500bdfd1b695f5d')
@@ -174,8 +173,8 @@ var today = dd + '/' + mm + '/' + yyyy;
             string ='<div> '+data.name+' <br> Currently is: '+f_temp+' F </<div><div>'+data.main.humidity+' % Humidity </div> <div> '+data.weather[0].description+'</div>';
             //console.log(data.weather[0].main)
             //console.log(data.main.temp)
-            //  console.log(data.main.humidity)
-            //  console.log(data.weather[0].main)
+            // console.log(data.main.humidity)
+            // console.log(data.weather[0].main)
             // console.log(data.weather[0].description)
             // console.log(data.weather[0].icon)
             // console.log(data.name)
@@ -193,13 +192,16 @@ var today = dd + '/' + mm + '/' + yyyy;
             const display = await response.json();
 
 
-            console.log(display)
+          console.log(display)
+         
+          var k_temp = display.list[0].main.temp_max
+         f_temp = ((k_temp - 273.15) * 1.8 + 32).toFixed(1);
 
-           var temp = display.list[0].main.temp_max
+         
            var wthr = display.list[0].weather[0].main
            var desc = display.list[0].weather[0].description
 
-            var tmrw = (temp +' , '+wthr + ', ' + desc)
+            var tmrw = (f_temp +' , '+wthr + ', ' + desc)
             console.log(tmrw)
 
         }
