@@ -1,4 +1,4 @@
-
+<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -96,22 +96,99 @@
 
   
     <div id = "aside-1">
-   <div id = "title"> <h3>Watch List</h3> </div>
-   <div class = "FixedHeightContainer">
-   <div class = "Content">
+   <div id = "title"> <h3>Markets</h3> </div>
 
-      <div class = "FixedHeightContainer">
-          <div class = "Content">
+   <div id ="market_grid">
+     <div id ="graph1"><!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div id="tradingview_20eae"></div>
+        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/AMEX-DIA/" rel="noopener" target="_blank"><span class="blue-text">DIA Chart</span></a> by TradingView</div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+        new TradingView.widget(
+        {
+        "width": 400,
+        "height": 450,
+        "symbol": "AMEX:DIA",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "Light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "container_id": "tradingview_20eae"
+      }
+        );
+        </script>
+      </div>
+      <!-- TradingView Widget END --></div>
+     <div id ="graph2"><!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div id="tradingview_32d0a"></div>
+        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/AMEX-SPY/" rel="noopener" target="_blank"><span class="blue-text">SPY Chart</span></a> by TradingView</div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+        new TradingView.widget(
+        {
+        "width": 400,
+        "height": 450,
+        "symbol": "AMEX:SPY",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "Light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "container_id": "tradingview_32d0a"
+      }
+        );
+        </script>
+      </div>
+      <!-- TradingView Widget END --></div>
+     <div id ="graph3"><!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div id="tradingview_0af0a"></div>
+        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-QQQ/" rel="noopener" target="_blank"><span class="blue-text">QQQ Chart</span></a> by TradingView</div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+        new TradingView.widget(
+        {
+        "width": 400,
+        "height": 450,
+        "symbol": "NASDAQ:QQQ",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "Light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "container_id": "tradingview_0af0a"
+      }
+        );
+        </script>
+      </div>
+      <!-- TradingView Widget END --></div>
+     <div id ="watch">
+      <div id = "title"><h3> Watch List</h3></div>
+
+      <p id ="wathc_list_array"> </p>
+
+
+
+
+
+
+     </div>
    
-      <p id="watchlist">     </p>
 
-      </div>
-      </div>
-
-    </div>
   </div>
-
-    </div>
+  </div>
 
     <div id = "aside-2">
         <div id = "title"><h3> Economic and Finance News </h3></div>

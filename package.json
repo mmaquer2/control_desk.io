@@ -11,7 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^6.0.10",
+    "express": "^4.17.1",
+    "http-server": "^0.11.1",
     "husky": "^3.0.5",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "requirejs": "^2.3.6",
     "surge": "^0.21.3"
   },
   "devDependencies": {

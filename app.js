@@ -1,5 +1,6 @@
 
 
+
 //on load update function 
 window.onload = function(){
   this.date();
@@ -95,30 +96,22 @@ document.getElementById("date").innerHTML = today;
     
 
     
-    async function stock_test(){
+     function stock_test(){
         
         //var watch = ['MSFT', 'APPL', 'INTC']
         
-        const stock_url = ('https://api-v2.intrinio.com/securities/MSFT/prices/realtime?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
-        const data = await fetch(stock_url);
-        const intrio_data = await data.json();
-        //console.log(intrio_data)
+       // const url = ('https://api.tiingo.com/tiingo/daily/INTC/prices?token=d46085603f679fecf81ab67e8cb5582004659857')
+        
+       
+    
 
-        var stock_time = intrio_data.last_time
-        var stock_price = intrio_data.last_price
-        var ticker = intrio_data.security.ticker
+
+        }
 
         
 
-        var resp = (ticker + " " + stock_price + " " +  stock_time)
 
-        document.getElementById('watchlist').innerHTML = resp;
-
-
-
-        
-
-    }
+    
 
     //indicies search
     //how to automate this for each url
@@ -141,16 +134,17 @@ document.getElementById("date").innerHTML = today;
             //const bond_data = await fetch(bond_url);
             //const bond = await bond_data.json();
 
+
             //console.log(bond)
 
 
-           // console.log(ndx)
+            
             //console.log(dji)
             //console.log(spx)
 
             //% change of stock or index price 
 
-            document.getElementById('SPX').innerHTML = spx; 
+            document.getElementById('SPX').innerHTML = spx;
             document.getElementById('NDX').innerHTML = ndx;
             document.getElementById('DJI').innerHTML = dji;
 
@@ -215,7 +209,7 @@ document.getElementById("date").innerHTML = today;
             // console.log(data.name)
         
          document.getElementById('today_weather').innerHTML =string
-         document.getElementById('Weather_ticker').innerHTML = f_temp;  
+         document.getElementById('Weather_ticker').innerHTML = f_temp + " F";  
          VisualWeather_test(k_temp) 
     
         }
@@ -240,15 +234,35 @@ document.getElementById("date").innerHTML = today;
 
 
 
+
+
             var tmrw1 = (name + "<br>" +time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
 
-            var tmrw2 = (name + "<br>" +time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
 
-            var tmrw3 = (name + "<br>" +time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
+            
+           var wthr2 = display.list[0].weather[0].main
+           var desc2 = display.list[0].weather[0].description
+           var time2 = display.list[0].dt_txt
 
-            var tmrw4 = (name + "<br>" +time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
+           var wthr3 = display.list[8].weather[0].main
+           var desc3 = display.list[8].weather[0].description
+           var time3 = display.list[8].dt_txt
 
-            var tmrw5 = (name + "<br>" +time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
+           var wthr4 = display.list[12].weather[0].main
+           var desc4 = display.list[12].weather[0].description
+           var time4 = display.list[12].dt_txt
+
+           var wthr5 = display.list[18].weather[0].main
+           var desc5 = display.list[18].weather[0].description
+           var time5 = display.list[18].dt_txt
+
+            var tmrw2 = (name + "<br>" +time2 + '<br>' + f_temp +' , '+wthr2 + ', ' + desc2)
+
+            var tmrw3 = (name + "<br>" +time3 + '<br>' + f_temp +' , '+wthr3 + ', ' + desc3)
+
+            var tmrw4 = (name + "<br>" +time4 + '<br>' + f_temp +' , '+wthr4 + ', ' + desc4)
+
+            var tmrw5 = (name + "<br>" +time5 + '<br>' + f_temp +' , '+wthr5 + ', ' + desc5)
             
 
 

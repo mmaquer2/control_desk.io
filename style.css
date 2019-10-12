@@ -29,7 +29,7 @@ span {margin: 0 10px;}
   }
 
 
-  #aside-1 { grid-area: aside1; background-color:#203145; color:white; height:540px;text-align: justify;border-radius: 25px;}
+  #aside-1 { grid-area: aside1; background-color:#203145; color:white; height:840px;text-align: justify;border-radius: 25px;}
 
   #aside-2 {grid-area: aside2; background-color:#203145; color:white;height:540px;text-align:justify;border-radius: 25px;}
   
@@ -82,8 +82,29 @@ span {margin: 0 10px;}
   
 
 
+  #market_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap:10px;
+    background-color: #313a41;
 
+    grid-template:
+
+    "graph1 graph2 graph3"
+    "watch watch watch"
+
+
+
+  }
   
+  #graph1 {grid-area: graph1;  background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
+
+  #graph2 {grid-area: graph2;  background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
+
+  #graph3 {grid-area: graph3;  background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
+
+  #watch {grid-area: watch;  background-color:#203145; color:white; height:300px; text-align: center; font-size:18px; border-radius: 25px;}
 
   #map {
     height: 210px;
@@ -134,7 +155,7 @@ span {margin: 0 10px;}
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-name: ticker;
-    animation-duration: 60s;
+    animation-duration: 15s;
   }
   .ticker-move:hover{
     animation-play-state: paused;
