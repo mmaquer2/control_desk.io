@@ -226,43 +226,44 @@ document.getElementById("date").innerHTML = today;
           var k_temp = display.list[0].main.temp_max
          f_temp = ((k_temp - 273.15) * 1.8 + 32).toFixed(1);
 
-
-            var name = display.city.name
            var wthr = display.list[0].weather[0].main
            var desc = display.list[0].weather[0].description
            var time = display.list[0].dt_txt
 
-
-
-
-
             var tmrw1 = (name + "<br>" +time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
 
-
             
-           var wthr2 = display.list[0].weather[0].main
-           var desc2 = display.list[0].weather[0].description
-           var time2 = display.list[0].dt_txt
+           var wthr2 = display.list[4].weather[0].main
+           var desc2 = display.list[4].weather[0].description
+           var time2 = display.list[4].dt_txt
+           k_temp2 = display.list[4].main.temp_max
+        f_temp2 = ((k_temp2 - 273.15) * 1.8 + 32).toFixed(1);
 
            var wthr3 = display.list[8].weather[0].main
            var desc3 = display.list[8].weather[0].description
            var time3 = display.list[8].dt_txt
+           k_temp3 = display.list[8].main.temp_max
+        f_temp3 = ((k_temp3 - 273.15) * 1.8 + 32).toFixed(1);
 
            var wthr4 = display.list[12].weather[0].main
            var desc4 = display.list[12].weather[0].description
            var time4 = display.list[12].dt_txt
+           k_temp4 = display.list[12].main.temp_max
+        f_temp4 = ((k_temp4 - 273.15) * 1.8 + 32).toFixed(1);
 
            var wthr5 = display.list[18].weather[0].main
            var desc5 = display.list[18].weather[0].description
            var time5 = display.list[18].dt_txt
+           k_temp5 = display.list[0].main.temp_max
+        f_temp5 = ((k_temp5 - 273.15) * 1.8 + 32).toFixed(1);
 
-            var tmrw2 = (name + "<br>" +time2 + '<br>' + f_temp +' , '+wthr2 + ', ' + desc2)
+            var tmrw2 = (time2 + '<br>' + f_temp2 +' , '+wthr2 + ', ' + desc2)
 
-            var tmrw3 = (name + "<br>" +time3 + '<br>' + f_temp +' , '+wthr3 + ', ' + desc3)
+            var tmrw3 = (time3 + '<br>' + f_temp3 +' , '+wthr3 + ', ' + desc3)
 
-            var tmrw4 = (name + "<br>" +time4 + '<br>' + f_temp +' , '+wthr4 + ', ' + desc4)
+            var tmrw4 = (time4 + '<br>' + f_temp4 +' , '+wthr4 + ', ' + desc4)
 
-            var tmrw5 = (name + "<br>" +time5 + '<br>' + f_temp +' , '+wthr5 + ', ' + desc5)
+            var tmrw5 = (time5 + '<br>' + f_temp5 +' , '+wthr5 + ', ' + desc5)
             
 
 

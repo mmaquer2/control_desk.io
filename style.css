@@ -70,15 +70,15 @@ span {margin: 0 10px;}
 
   }
 
-  #weather1 {grid-area: weather1;  background-color:#203145; color:white; height:300px; text-align: center; font-size:18px; border-radius: 25px;}
+  #weather1 {grid-area: weather1;  background-color:#203145; color:white; height:100px; text-align: center; font-size:18px; border-radius: 25px;}
 
-  #weather2 {grid-area: weather2;  background-color:#203145; color:white; height:300px; text-align: center; font-size:18px; border-radius: 25px;}
+  #weather2 {grid-area: weather2;  background-color:#203145; color:white; height:100px; text-align: center; font-size:18px; border-radius: 25px;}
 
-  #weather3 {grid-area: weather3;  background-color:#203145; color:white; height:300px; text-align: center; font-size:18px; border-radius: 25px;}
+  #weather3 {grid-area: weather3;  background-color:#203145; color:white; height:100px; text-align: center; font-size:18px; border-radius: 25px;}
 
-  #weather4 {grid-area: weather4;  background-color:#203145; color:white; height:300px; text-align: center; font-size:18px; border-radius: 25px;}
+  #weather4 {grid-area: weather4;  background-color:#203145; color:white; height:100px; text-align: center; font-size:18px; border-radius: 25px;}
 
-  #weather5 {grid-area: weather5;  background-color:#203145; color:white; height:300px; text-align: center; font-size:18px; border-radius: 25px;}
+  #weather5 {grid-area: weather5;  background-color:#203145; color:white; height:100px; text-align: center; font-size:18px; border-radius: 25px;}
   
 
 
@@ -98,13 +98,13 @@ span {margin: 0 10px;}
 
   }
   
-  #graph1 {grid-area: graph1;  background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
+  #graph1 {grid-area: graph1; display: inline-block; background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
 
-  #graph2 {grid-area: graph2;  background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
+  #graph2 {grid-area: graph2; display: inline-block; background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
 
-  #graph3 {grid-area: graph3;  background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
+  #graph3 {grid-area: graph3; display: inline-block;  background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
 
-  #watch {grid-area: watch;  background-color:#203145; color:white; height:300px; text-align: center; font-size:18px; border-radius: 25px;}
+  #watch {grid-area: watch; display:inline-block; background-color:#203145; color:white; height:40px; text-align: center; font-size:18px; border-radius: 25px;}
 
   #map {
     height: 210px;
