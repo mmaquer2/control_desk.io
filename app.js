@@ -1,11 +1,12 @@
 
+
 //on load update function 
 window.onload = function(){
+  this.date();
   this.time();
-// this.test();
- this.weather();
- this.initMap();
-  // this.stock_api();
+  this.weather();
+  this.initMap();
+  this.stock_api();
    this.news_api();
    this.stock_news();
    this.five_day();
@@ -19,7 +20,7 @@ function test() {
         alert('test is working')
         document.getElementById('search-out').innerHTML = "test test test"
     }
-function time() {
+function date() {
 
 var today = new Date();
 var dd = today.getDate();
@@ -34,9 +35,29 @@ if (mm < 10) {
 } 
 var today = dd + '/' + mm + '/' + yyyy;
         
-    document.getElementById("date_time").innerHTML = today;
+document.getElementById("date").innerHTML = today;
 
  }
+
+
+ function time() {
+
+    
+        var d = new Date();
+        var s = d.getSeconds();
+        var m = d.getMinutes();
+        var h = d.getHours();
+        var clock = h + ":" + m + ":" + s;
+      
+        document.getElementById("time").innerHTML = clock;
+
+        
+      
+
+
+
+ }
+
 
     
 
@@ -63,32 +84,39 @@ var today = dd + '/' + mm + '/' + yyyy;
         document.getElementById('stock_news').innerHTML = output; 
     }
 
-    /*
+    
     //const alpha_key = ('YIF9NU7FLVJWG46Q');
-    const url = ('https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=MSFT&apikey=YIF9NU7FLVJWG46Q');
     async function stock_api() {
-
+        const url = ('https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=MSFT&apikey=YIF9NU7FLVJWG46Q');
         const response = await fetch(url);
-        const stock_data = await response.json();  
-        console.log(stock_data)
+        const alpha_data = await response.json();  
+        //console.log(alpha_data)
     }
-    */
+    
 
-    //stock api with intrino stuff
-   // https://api-v2.intrinio.com/companies/AAPL?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5
-    //https://api-v2.intrinio.com/securities/AAPL/prices/realtime
+    
     async function stock_test(){
-        const stock_url = ('https://api-v2.intrinio.com/securities/AAPL/prices/realtime?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+        
+        //var watch = ['MSFT', 'APPL', 'INTC']
+        
+        const stock_url = ('https://api-v2.intrinio.com/securities/MSFT/prices/realtime?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
         const data = await fetch(stock_url);
-        const stock_data = await data.json();
-        console.log(stock_data)
+        const intrio_data = await data.json();
+        //console.log(intrio_data)
 
-        var watch = ['MSFT', 'APPL', 'INTC']
-        document.getElementById('watchlist').innerHTML = watch;
+        var stock_time = intrio_data.last_time
+        var stock_price = intrio_data.last_price
+        var ticker = intrio_data.security.ticker
 
-        var price= []
+        
 
-        var change_dif = []
+        var resp = (ticker + " " + stock_price + " " +  stock_time)
+
+        document.getElementById('watchlist').innerHTML = resp;
+
+
+
+        
 
     }
 
@@ -108,6 +136,12 @@ var today = dd + '/' + mm + '/' + yyyy;
             const ndx_url = ('https://api-v2.intrinio.com/indices/stock_market/$NDX/data_point/level/text?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
             const ndx_data = await fetch(ndx_url);
             const ndx = await ndx_data.json();
+
+            //const bond_url = ('https://api-v2.intrinio.com/indices/stock_market/$VBMDFX/data_point/level/text?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+            //const bond_data = await fetch(bond_url);
+            //const bond = await bond_data.json();
+
+            //console.log(bond)
 
 
            // console.log(ndx)
@@ -182,7 +216,7 @@ var today = dd + '/' + mm + '/' + yyyy;
         
          document.getElementById('today_weather').innerHTML =string
          document.getElementById('Weather_ticker').innerHTML = f_temp;  
-         //VisualWeather_test(k_temp,desc) 
+         VisualWeather_test(k_temp) 
     
         }
 
@@ -198,34 +232,53 @@ var today = dd + '/' + mm + '/' + yyyy;
           var k_temp = display.list[0].main.temp_max
          f_temp = ((k_temp - 273.15) * 1.8 + 32).toFixed(1);
 
-         
+
+            var name = display.city.name
            var wthr = display.list[0].weather[0].main
            var desc = display.list[0].weather[0].description
+           var time = display.list[0].dt_txt
 
-            var tmrw = (f_temp +' , '+wthr + ', ' + desc)
-            console.log(tmrw)
+
+
+            var tmrw1 = (name + "<br>" +time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
+
+            var tmrw2 = (name + "<br>" +time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
+
+            var tmrw3 = (name + "<br>" +time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
+
+            var tmrw4 = (name + "<br>" +time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
+
+            var tmrw5 = (name + "<br>" +time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
+            
+
+
+            document.getElementById('tmrw1').innerHTML = tmrw1;
+            document.getElementById('tmrw2').innerHTML = tmrw2;
+            document.getElementById('tmrw3').innerHTML = tmrw3;
+            document.getElementById('tmrw4').innerHTML = tmrw4;
+            document.getElementById('tmrw5').innerHTML = tmrw5;
 
         }
        
 
-        //document.getElementById('five_day_weather').innerHTML = f_temp;
+        
     
     
         function VisualWeather_test (temp) {
         
             if (temp < 300) {
-           // document.getElementById('weather-icon').className = "fas fa-cloud fa-10x";
-            document.getElementById('weather').style.backgroundColor = "lightgrey";
+            document.getElementById('weather-icon').className = "fas fa-cloud fa-5x";
+           // document.getElementById('weather').style.backgroundColor = "lightgrey";
             
             }
             else if ( temp > 300) {
-               document.getElementById('weather').style.backgroundColor = "skyblue";
-              //  document.getElementById('weather-icon').className = "fas fa-sun fa-10x";
+             //  document.getElementById('weather').style.backgroundColor = "skyblue";
+                document.getElementById('weather-icon').className = "fas fa-sun fa-5x";
             }
             
             else {
-               // document.getElementById('weather-icon').className = "fas fa-cloud fa-10x"
-                document.getElementById('weather').style.backgroundColor = "grey";
+                document.getElementById('weather-icon').className = "fas fa-cloud fa-5x"
+               // document.getElementById('weather').style.backgroundColor = "grey";
             }
             
          }
@@ -234,8 +287,8 @@ var today = dd + '/' + mm + '/' + yyyy;
 
          function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 13,
-              center: {lat: 34.04924594193164, lng: -118.24104309082031}
+              zoom: 9,
+              center: {lat: 36.1627, lng: -86.7816}
             });
     
             var trafficLayer = new google.maps.TrafficLayer();

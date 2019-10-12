@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,9 +45,14 @@
               </div>
             </div>
             <div class ="subnav">
-              <p id = "date_time">   </p>
+              <p id = "time"></p>
 
             </div>
+
+            <div class ="subnav">
+                <p id = "date"></p>
+  
+              </div>
             
           </div>
     
@@ -63,9 +68,8 @@
         <div class="ticker-item"> <p id="DJI">  </p></div>
         <div class="ticker-item"><p>NDX</p></div>
         <div class="ticker-item"> <p id="NDX">  </p></div>
-        <div class="ticker-item"><p>10 Year Bond:</p></div>
-        <div class="ticker-item"><p>30 Year Bond:</p></div>
-        <div class="ticker-item"> <p>Traffic Report:  </p></div>
+        
+        
         
         <div class="ticker-item" id="output">  </div>
         
@@ -130,6 +134,7 @@
   <div id = "main1">
       <div id = "title"><h3>Current Weather </h3></div>
       <p class ="" id ="today_weather"></p>
+      <i class = "none"; id ="weather-icon"></i>
     
     
     
@@ -145,9 +150,35 @@
   
 
   <div id="main2">
-      <div id = "title"><h3> 7 Day Weather Outlook </h3></div>
-      <p id ="five_day_weather"></p>
+      <div id = "title"><h3> Five Day Weather Outlook </h3></div>
+
+      <div id ="weather_grid">
+
+      <div id = "weather1">1
+        <p id ="tmrw1"></p>
+      </div>
+      <div id = "weather2">2
+          <p id ="tmrw2"></p>
+
+      </div>
+      <div id = "weather3">3
+          <p id ="tmrw3"></p>
+      </div>
+      <div id = "weather4">4
+          <p id ="tmrw4"></p>
+
+      </div>
+      <div id = "weather5">5
+          <p id ="tmrw5"></p>
+
+      </div>
+
+    </div>
+      
+
+      
     
+
     
       
   </div>
