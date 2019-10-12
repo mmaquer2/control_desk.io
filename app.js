@@ -221,7 +221,7 @@ document.getElementById("date").innerHTML = today;
             const display = await response.json();
 
 
-          console.log(display)
+          //console.log(display)
          
           var k_temp = display.list[0].main.temp_max
          f_temp = ((k_temp - 273.15) * 1.8 + 32).toFixed(1);
@@ -230,7 +230,7 @@ document.getElementById("date").innerHTML = today;
            var desc = display.list[0].weather[0].description
            var time = display.list[0].dt_txt
 
-            var tmrw1 = (name + "<br>" +time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
+            var tmrw1 = (time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
 
             
            var wthr2 = display.list[4].weather[0].main

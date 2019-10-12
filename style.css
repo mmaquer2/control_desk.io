@@ -104,7 +104,7 @@ span {margin: 0 10px;}
 
   #graph3 {grid-area: graph3; display: inline-block;  background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
 
-  #watch {grid-area: watch; display:inline-block; background-color:#203145; color:white; height:40px; text-align: center; font-size:18px; border-radius: 25px;}
+  #watch {grid-area: watch; display:inline-block; background-color:#203145; color:white; height:10px; text-align: center; font-size:18px; border-radius: 25px;}
 
   #map {
     height: 210px;
