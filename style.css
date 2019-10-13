@@ -29,16 +29,15 @@ span {margin: 0 10px;}
   }
 
 
+  #aside-1 { grid-area: aside1; background-color:#203145; color:white; height:840px;text-align: justify;border-radius: 25px;}
 
-  #aside-1 { grid-area: aside1; background-color:#203145; color:white; height:640px;text-align: center;border-radius: 25px;}
-
-  #aside-2 {grid-area: aside2; background-color:#203145; color:white;height:640px;text-align:center;border-radius: 25px;}
+  #aside-2 {grid-area: aside2; background-color:#203145; color:white;height:540px;text-align:justify;border-radius: 25px;}
   
-  #aside-3 { grid-area: aside3; background-color:#203145; color:white;;height:640px;text-align:center;border-radius: 25px;}
+  #aside-3 { grid-area: aside3; background-color:#203145; color:white;;height:540px;text-align:justify;border-radius: 25px;}
   
  
 
-  #main1 {grid-area: main1; display: inline-block;  background-color:#203145; color:white; height:170px; text-align: center; font-size:18px;border-radius: 25px; }
+  #main1 {grid-area: main1; display: inline-block;  background-color:#203145; color:white; height:270px; text-align: center; font-size:18px;border-radius: 25px; }
 
   #main2 {grid-area: main2;  background-color:#203145; color:white;height:350px; text-align: center; font-size:18px; border-radius: 25px;}
 
@@ -50,9 +49,70 @@ span {margin: 0 10px;}
     border-radius: 25px;
     text-align: center;
     font-size:18px;
+    height:270px;
 
     
   }
+
+
+
+  #weather_grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-gap:1px;
+      background-color: #313a41;
+
+      grid-template:
+
+      "weather1 weather2 weather3 weather4 weather5"
+
+
+  }
+
+  #weather1 {grid-area: weather1;  background-color:#203145; color:white; height:100px; text-align: center; font-size:18px; border-radius: 25px;}
+
+  #weather2 {grid-area: weather2;  background-color:#203145; color:white; height:100px; text-align: center; font-size:18px; border-radius: 25px;}
+
+  #weather3 {grid-area: weather3;  background-color:#203145; color:white; height:100px; text-align: center; font-size:18px; border-radius: 25px;}
+
+  #weather4 {grid-area: weather4;  background-color:#203145; color:white; height:100px; text-align: center; font-size:18px; border-radius: 25px;}
+
+  #weather5 {grid-area: weather5;  background-color:#203145; color:white; height:100px; text-align: center; font-size:18px; border-radius: 25px;}
+  
+
+
+  #market_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap:10px;
+    background-color: #313a41;
+
+    grid-template:
+
+    "graph1 graph2 graph3"
+    "watch watch watch"
+
+
+
+  }
+  
+  #graph1 {grid-area: graph1; display: inline-block; background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
+
+  #graph2 {grid-area: graph2; display: inline-block; background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
+
+  #graph3 {grid-area: graph3; display: inline-block;  background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
+
+  #watch {grid-area: watch; display:inline-block; background-color:#203145; color:white; height:10px; text-align: center; font-size:18px; border-radius: 25px;}
+
+  #map {
+    height: 210px;
+    width:800px;
+    display: inline-block;
+  }
+  /* Optional: Makes the sample page fill the window. */
+
 
 
 
@@ -65,6 +125,7 @@ span {margin: 0 10px;}
   color:white;
   
   border-radius: 25px;
+  text-align: center;
 
 }
 
@@ -94,7 +155,7 @@ span {margin: 0 10px;}
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-name: ticker;
-    animation-duration: 60s;
+    animation-duration: 15s;
   }
   .ticker-move:hover{
     animation-play-state: paused;
@@ -215,3 +276,23 @@ span {margin: 0 10px;}
   .subnav:hover .subnav-content {
     display: block;
   }
+
+
+
+
+
+
+  .FixedHeightContainer
+{
+  
+  height: auto;
+  width:auto; 
+  padding:3px; 
+    
+}
+.Content
+{
+  height:500px;
+   overflow:auto;
+    
+}

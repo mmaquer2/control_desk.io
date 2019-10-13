@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width= initial-scale=1.0">
+    <meta name="viewport" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="refresh" content="200"/>
     <title></title>
@@ -45,9 +45,14 @@
               </div>
             </div>
             <div class ="subnav">
-              <p id = "date_time">   </p>
+              <p id = "time"></p>
 
             </div>
+
+            <div class ="subnav">
+                <p id = "date"></p>
+  
+              </div>
             
           </div>
     
@@ -63,9 +68,8 @@
         <div class="ticker-item"> <p id="DJI">  </p></div>
         <div class="ticker-item"><p>NDX</p></div>
         <div class="ticker-item"> <p id="NDX">  </p></div>
-        <div class="ticker-item"><p>10 Year Bond:</p></div>
-        <div class="ticker-item"><p>30 Year Bond:</p></div>
-        <div class="ticker-item"> <p>Traffic Report:  </p></div>
+        
+        
         
         <div class="ticker-item" id="output">  </div>
         
@@ -78,7 +82,13 @@
 
       <div id = "title"><h3> Featured Stories </h3></div>
           <div id="display">
+
+              <div class = "FixedHeightContainer">
+                  <div class = "Content">
     <p id="news_output"></p>
+
+    </div>
+    </div>
   </div>
   
   </div>
@@ -86,15 +96,164 @@
 
   
     <div id = "aside-1">
-   <div id = "title"> <h3>Watch List</h3> </div>
-   
-      <p id="watchlist">     </p>
+   <div id = "title"> <h3>Markets</h3> </div>
 
-    </div>
+   <div id ="market_grid">
+     <div id ="graph1"><!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div id="tradingview_20eae"></div>
+        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/AMEX-DIA/" rel="noopener" target="_blank"><span class="blue-text">DIA Chart</span></a> by TradingView</div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+        new TradingView.widget(
+        {
+        "width": 400,
+        "height": 450,
+        "symbol": "AMEX:DIA",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "Light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "container_id": "tradingview_20eae"
+      }
+        );
+        </script>
+      </div>
+      <!-- TradingView Widget END --></div>
+     <div id ="graph2"><!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div id="tradingview_32d0a"></div>
+        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/AMEX-SPY/" rel="noopener" target="_blank"><span class="blue-text">SPY Chart</span></a> by TradingView</div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+        new TradingView.widget(
+        {
+        "width": 400,
+        "height": 450,
+        "symbol": "AMEX:SPY",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "Light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "container_id": "tradingview_32d0a"
+      }
+        );
+        </script>
+      </div>
+      <!-- TradingView Widget END --></div>
+     <div id ="graph3"><!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div id="tradingview_0af0a"></div>
+        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-QQQ/" rel="noopener" target="_blank"><span class="blue-text">QQQ Chart</span></a> by TradingView</div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+        new TradingView.widget(
+        {
+        "width": 400,
+        "height": 450,
+        "symbol": "NASDAQ:QQQ",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "Light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "container_id": "tradingview_0af0a"
+      }
+        );
+        </script>
+      </div>
+      <!-- TradingView Widget END --></div>
+     <div id ="watch">
+      <div id = "title"><h3> Watch List</h3></div>
+      <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Ticker Tape</span></a> by TradingView</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+    "symbols": [
+      {
+        "title": "S&P 500",
+        "proName": "OANDA:SPX500USD"
+      },
+      {
+        "title": "BTC/USD",
+        "proName": "BITSTAMP:BTCUSD"
+      },
+      {
+        "description": "MSFT",
+        "proName": "NASDAQ:MSFT"
+      },
+      {
+        "description": "NIKE",
+        "proName": "NYSE:NKE"
+      },
+      {
+        "description": "INTEL",
+        "proName": "NASDAQ:INTC"
+      },
+      {
+        "description": "NVIDIA",
+        "proName": "NASDAQ:NVDA"
+      },
+      {
+        "description": "TWILIO",
+        "proName": "NYSE:TWLO"
+      },
+      {
+        "description": "FORD MTR CO",
+        "proName": "NYSE:F"
+      },
+      {
+        "description": "VTI",
+        "proName": "AMEX:VTI"
+      },
+      {
+        "description": "ILLUMIA",
+        "proName": "NASDAQ:ILMN"
+      },
+      {
+        "description": "APPLE",
+        "proName": "NASDAQ:AAPL"
+      }
+    ],
+    "colorTheme": "light",
+    "isTransparent": false,
+    "displayMode": "adaptive",
+    "locale": "en"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+
+     </div>
+   
+
+  </div>
+  </div>
 
     <div id = "aside-2">
         <div id = "title"><h3> Economic and Finance News </h3></div>
+
+        <div class = "FixedHeightContainer">
+          <div class = "Content">
+          
+           
         <p id="stock_news">      </p>
+
+      </div>
+    </div>
     
     </div>
 
@@ -103,6 +262,7 @@
   <div id = "main1">
       <div id = "title"><h3>Current Weather </h3></div>
       <p class ="" id ="today_weather"></p>
+      <i class = "none"; id ="weather-icon"></i>
     
     
     
@@ -110,7 +270,7 @@
 
   <div id = "card">
       <div id = "title"><h3>Local Traffic</h3></div>
-      <p class ="" id ="today_weather"></p>
+      <div id="map"></div>
     
     
     
@@ -118,18 +278,37 @@
   
 
   <div id="main2">
-      <div id = "title"><h3> 7 Day Weather Outlook </h3></div>
-      <p id ="five_day_weather"></p>
-    
-    
+      <div id = "title"><h3> Five Day Weather Outlook </h3></div>
+
+      <div id ="weather_grid">
+
+      <div id = "weather1">
+        <p id ="tmrw1"></p>
+      </div>
+      <div id = "weather2">
+          <p id ="tmrw2"></p>
+
+      </div>
+      <div id = "weather3">
+          <p id ="tmrw3"></p>
+      </div>
+      <div id = "weather4">
+          <p id ="tmrw4"></p>
+
+      </div>
+      <div id = "weather5">
+          <p id ="tmrw5"></p>
+
+      </div>
+
       
   </div>
     
   <div id="main3">
       <div id = "title"><h3> Sports </h3></div>
+
       
-      
-      <p id ="wolf"></p>
+      <div class="scorestream-widget-container" data-ss_widget_type="horzScoreboard" data-user-widget-id="35384"></div><script async="async" type="text/javascript" src="https://scorestream.com/apiJsCdn/widgets/embed.js"></script>
     
     
       
@@ -139,5 +318,10 @@
 
  
 </body>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWBex4aDVfX-Os4L8WJwx3qQZhJwZNcpE&callback=initMap">
+</script>
 </html>
+
+
 

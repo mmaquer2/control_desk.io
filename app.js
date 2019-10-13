@@ -1,10 +1,13 @@
 
+
+
 //on load update function 
 window.onload = function(){
+  this.date();
   this.time();
-// this.test();
- this.weather();
-  // this.stock_api();
+  this.weather();
+  this.initMap();
+  this.stock_api();
    this.news_api();
    this.stock_news();
    this.five_day();
@@ -18,7 +21,7 @@ function test() {
         alert('test is working')
         document.getElementById('search-out').innerHTML = "test test test"
     }
-function time() {
+function date() {
 
 var today = new Date();
 var dd = today.getDate();
@@ -33,9 +36,29 @@ if (mm < 10) {
 } 
 var today = dd + '/' + mm + '/' + yyyy;
         
-    document.getElementById("date_time").innerHTML = today;
+document.getElementById("date").innerHTML = today;
 
  }
+
+
+ function time() {
+
+    
+        var d = new Date();
+        var s = d.getSeconds();
+        var m = d.getMinutes();
+        var h = d.getHours();
+        var clock = h + ":" + m + ":" + s;
+      
+        document.getElementById("time").innerHTML = clock;
+
+        
+      
+
+
+
+ }
+
 
     
 
@@ -44,37 +67,51 @@ var today = dd + '/' + mm + '/' + yyyy;
         const response = await fetch(stock_news_url);
         const news_data = await response.json();
 
+        var output = ""
+        let chars = news_data.news;
+            for(let i =0; i < chars.length;i++){
+            //console.log(chars[i])
+        //    console.log(chars[i].title)
+          //  console.log(chars[i].summary)
+          //  console.log(chars[i].publication_date)
+           // console.log(chars[i].url)
 
-        var output = '<h5>'+ news_data.news[1].title +'</h5>'+ news_data.news[1].summary +'<br>'+ news_data.news[1].publication_date +'<br>'+ '<a href="'+  news_data.news[1].url + '">' + 'Link' +'</a>'
-        
+            output += '<h5>'+ chars[i].title+ '</h5>'+ chars[i].summary + '<br>' +'<a href="'+  chars[i].url + '">' + 'Link' +'</a><hr></hr>'
+
+            
+
+            }
     
         document.getElementById('stock_news').innerHTML = output; 
     }
 
-    /*
+    
     //const alpha_key = ('YIF9NU7FLVJWG46Q');
-    const url = ('https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=MSFT&apikey=YIF9NU7FLVJWG46Q');
     async function stock_api() {
-
+        const url = ('https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=MSFT&apikey=YIF9NU7FLVJWG46Q');
         const response = await fetch(url);
-        const stock_data = await response.json();  
-        console.log(stock_data)
+        const alpha_data = await response.json();  
+        //console.log(alpha_data)
     }
-    */
+    
 
-    //stock api with intrino stuff
-   // https://api-v2.intrinio.com/companies/AAPL?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5
-    //https://api-v2.intrinio.com/securities/AAPL/prices/realtime
-    async function stock_test(){
-        const stock_url = ('https://api-v2.intrinio.com/securities/AAPL/prices/realtime?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
-        const data = await fetch(stock_url);
-        const stock_data = await data.json();
-        console.log(stock_data)
+    
+     function stock_test(){
+        
+        //var watch = ['MSFT', 'APPL', 'INTC']
+        
+       // const url = ('https://api.tiingo.com/tiingo/daily/INTC/prices?token=d46085603f679fecf81ab67e8cb5582004659857')
+        
+       
+    
 
-        var stocks = "hello world"
-        document.getElementById('watchlist').innerHTML = stocks;
 
-    }
+        }
+
+        
+
+
+    
 
     //indicies search
     //how to automate this for each url
@@ -93,14 +130,21 @@ var today = dd + '/' + mm + '/' + yyyy;
             const ndx_data = await fetch(ndx_url);
             const ndx = await ndx_data.json();
 
+            //const bond_url = ('https://api-v2.intrinio.com/indices/stock_market/$VBMDFX/data_point/level/text?api_key=OjRhODk1ZjZkNDkxMzUzNTAwOTc5YjY1ZmE5NjFkMTU5')
+            //const bond_data = await fetch(bond_url);
+            //const bond = await bond_data.json();
 
-           // console.log(ndx)
+
+            //console.log(bond)
+
+
+            
             //console.log(dji)
             //console.log(spx)
 
             //% change of stock or index price 
 
-            document.getElementById('SPX').innerHTML = spx; 
+            document.getElementById('SPX').innerHTML = spx;
             document.getElementById('NDX').innerHTML = ndx;
             document.getElementById('DJI').innerHTML = dji;
 
@@ -123,25 +167,24 @@ var today = dd + '/' + mm + '/' + yyyy;
         const response = await fetch(news_url);
         const news_data = await response.json();
 
-        
-        
-        
-      var post = '<h5>'+ news_data.articles[4].title + '</h5>' +  news_data.articles[4].description + '<br>'+news_data.articles[4].publishedAt + '<br>'+ '<a href="'+  news_data.articles[4].source.name + '">' + 'Link' +'</a><hr></hr>'  
-    
 
-      document.getElementById('news_output').innerHTML = post  
+        var post = ""
+        let chars = news_data.articles;
+            for(let i =0; i < chars.length;i++){
+            //console.log(chars[i])
+            //console.log(chars[i].title)
+            //console.log(chars[i].description)
 
-            
-                
+            post += '<h5>'+ chars[i].title+ '</h5>'+ chars[i].description + '<br>' +'<a href="'+  chars[i].source + '">' + 'Link' +'</a><hr></hr>'
+
+            }
+          
+            document.getElementById('news_output').innerHTML = post  
+
+             }
+
          
-         }
-
-         
-            
-                      
- 
-
-        async function weather() {
+    async function weather() {
 
             const start = ('https://api.openweathermap.org/data/2.5/weather?q=')
             const id =('&APPID=a488d31fefafdc561500bdfd1b695f5d')
@@ -159,15 +202,15 @@ var today = dd + '/' + mm + '/' + yyyy;
             string ='<div> '+data.name+' <br> Currently is: '+f_temp+' F </<div><div>'+data.main.humidity+' % Humidity </div> <div> '+data.weather[0].description+'</div>';
             //console.log(data.weather[0].main)
             //console.log(data.main.temp)
-            //  console.log(data.main.humidity)
-            //  console.log(data.weather[0].main)
+            // console.log(data.main.humidity)
+            // console.log(data.weather[0].main)
             // console.log(data.weather[0].description)
             // console.log(data.weather[0].icon)
             // console.log(data.name)
         
          document.getElementById('today_weather').innerHTML =string
-         document.getElementById('Weather_ticker').innerHTML = f_temp;  
-         //VisualWeather_test(k_temp,desc) 
+         document.getElementById('Weather_ticker').innerHTML = f_temp + " F";  
+         VisualWeather_test(k_temp) 
     
         }
 
@@ -178,39 +221,94 @@ var today = dd + '/' + mm + '/' + yyyy;
             const display = await response.json();
 
 
-            console.log(display)
+          //console.log(display)
+         
+          var k_temp = display.list[0].main.temp_max
+         f_temp = ((k_temp - 273.15) * 1.8 + 32).toFixed(1);
 
-           var temp = display.list[0].main.temp_max
            var wthr = display.list[0].weather[0].main
            var desc = display.list[0].weather[0].description
+           var time = display.list[0].dt_txt
 
-            var tmrw = (temp +' , '+wthr + ', ' + desc)
-            console.log(tmrw)
+            var tmrw1 = (time + '<br>' + f_temp +' , '+wthr + ', ' + desc)
+
+            
+           var wthr2 = display.list[4].weather[0].main
+           var desc2 = display.list[4].weather[0].description
+           var time2 = display.list[4].dt_txt
+           k_temp2 = display.list[4].main.temp_max
+        f_temp2 = ((k_temp2 - 273.15) * 1.8 + 32).toFixed(1);
+
+           var wthr3 = display.list[8].weather[0].main
+           var desc3 = display.list[8].weather[0].description
+           var time3 = display.list[8].dt_txt
+           k_temp3 = display.list[8].main.temp_max
+        f_temp3 = ((k_temp3 - 273.15) * 1.8 + 32).toFixed(1);
+
+           var wthr4 = display.list[12].weather[0].main
+           var desc4 = display.list[12].weather[0].description
+           var time4 = display.list[12].dt_txt
+           k_temp4 = display.list[12].main.temp_max
+        f_temp4 = ((k_temp4 - 273.15) * 1.8 + 32).toFixed(1);
+
+           var wthr5 = display.list[18].weather[0].main
+           var desc5 = display.list[18].weather[0].description
+           var time5 = display.list[18].dt_txt
+           k_temp5 = display.list[0].main.temp_max
+        f_temp5 = ((k_temp5 - 273.15) * 1.8 + 32).toFixed(1);
+
+            var tmrw2 = (time2 + '<br>' + f_temp2 +' , '+wthr2 + ', ' + desc2)
+
+            var tmrw3 = (time3 + '<br>' + f_temp3 +' , '+wthr3 + ', ' + desc3)
+
+            var tmrw4 = (time4 + '<br>' + f_temp4 +' , '+wthr4 + ', ' + desc4)
+
+            var tmrw5 = (time5 + '<br>' + f_temp5 +' , '+wthr5 + ', ' + desc5)
+            
+
+
+            document.getElementById('tmrw1').innerHTML = tmrw1;
+            document.getElementById('tmrw2').innerHTML = tmrw2;
+            document.getElementById('tmrw3').innerHTML = tmrw3;
+            document.getElementById('tmrw4').innerHTML = tmrw4;
+            document.getElementById('tmrw5').innerHTML = tmrw5;
 
         }
        
 
-        //document.getElementById('five_day_weather').innerHTML = f_temp;
+        
     
     
         function VisualWeather_test (temp) {
         
             if (temp < 300) {
-           // document.getElementById('weather-icon').className = "fas fa-cloud fa-10x";
-            document.getElementById('weather').style.backgroundColor = "lightgrey";
+            document.getElementById('weather-icon').className = "fas fa-cloud fa-5x";
+           // document.getElementById('weather').style.backgroundColor = "lightgrey";
             
             }
             else if ( temp > 300) {
-               document.getElementById('weather').style.backgroundColor = "skyblue";
-              //  document.getElementById('weather-icon').className = "fas fa-sun fa-10x";
+             //  document.getElementById('weather').style.backgroundColor = "skyblue";
+                document.getElementById('weather-icon').className = "fas fa-sun fa-5x";
             }
             
             else {
-               // document.getElementById('weather-icon').className = "fas fa-cloud fa-10x"
-                document.getElementById('weather').style.backgroundColor = "grey";
+                document.getElementById('weather-icon').className = "fas fa-cloud fa-5x"
+               // document.getElementById('weather').style.backgroundColor = "grey";
             }
             
          }
+
+
+
+         function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 9,
+              center: {lat: 36.1627, lng: -86.7816}
+            });
+    
+            var trafficLayer = new google.maps.TrafficLayer();
+            trafficLayer.setMap(map);
+          }
 
 
 
