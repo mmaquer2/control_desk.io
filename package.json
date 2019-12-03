@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "deploy": "surge --prject ./ --domain control-desk.io.surge.sh"
+    "deploy": "surge --project ./ --domain samplecontorldesksite-io.surge.sh"
   },
   "author": "",
   "license": "ISC",

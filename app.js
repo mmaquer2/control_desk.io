@@ -4,7 +4,6 @@
 //on load update function 
 window.onload = function(){
   this.date();
-  this.time();
   this.weather();
   this.initMap();
   this.stock_api();
@@ -150,8 +149,6 @@ document.getElementById("date").innerHTML = today;
 
             
             
-            
-
 
     }
 

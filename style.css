@@ -25,7 +25,7 @@ span {margin: 0 10px;}
                  "main1 main1 card"
                  " main1 main1 card"
                  "main2 main2 main2"
-                 "main3 main3 main3";
+                 ;
   }
 
 
@@ -98,17 +98,11 @@ span {margin: 0 10px;}
 
   }
   
-  #graph1 {grid-area: graph1; display: inline-block; background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
 
-  #graph2 {grid-area: graph2; display: inline-block; background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
-
-  #graph3 {grid-area: graph3; display: inline-block;  background-color:#203145; color:white; height:500px; text-align: center; font-size:18px; border-radius: 25px;}
-
-  #watch {grid-area: watch; display:inline-block; background-color:#203145; color:white; height:10px; text-align: center; font-size:18px; border-radius: 25px;}
 
   #map {
     height: 210px;
-    width:800px;
+    width:600px;
     display: inline-block;
   }
   /* Optional: Makes the sample page fill the window. */
@@ -202,9 +196,6 @@ span {margin: 0 10px;}
   
 
 
-  footer {
-    background-color:#313a41; height: 70px;text-align: center;
-  }
 
   .navbar {
     background-color:#313a41;
