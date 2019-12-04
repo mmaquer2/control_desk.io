@@ -15,11 +15,6 @@ window.onload = function(){
 
 }
 
-function test() {
-        console.log('hello world')
-        alert('test is working')
-        document.getElementById('search-out').innerHTML = "test test test"
-    }
 function date() {
 
 var today = new Date();

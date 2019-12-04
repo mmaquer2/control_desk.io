@@ -81,22 +81,6 @@ span {margin: 0 10px;}
   #weather5 {grid-area: weather5;  background-color:#203145; color:white; height:100px; text-align: center; font-size:18px; border-radius: 25px;}
   
 
-
-  #market_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap:10px;
-    background-color: #313a41;
-
-    grid-template:
-
-    "graph1 graph2 graph3"
-    "watch watch watch"
-
-
-
-  }
   
 
 
@@ -117,6 +101,7 @@ span {margin: 0 10px;}
   font-weight: bold;
   background-color:#383838;
   color:white;
+  width: 100%;
   
   border-radius: 25px;
   text-align: center;
